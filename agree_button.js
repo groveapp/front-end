@@ -36,5 +36,5 @@ class AgreeButton extends React.Component {
 
 }
 
-const domContainer = document.querySelector('#Agree_button');
-ReactDOM.render(e(LikeButton), domContainer);
+const domContainer = document.querySelector('#agree_button_container');
+ReactDOM.render(e(AgreeButton), domContainer);
