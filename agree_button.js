@@ -16,9 +16,24 @@ class AgreeButton extends React.Component {
     return e(
       'button',
       { onClick: () => this.setState({ clicked: true }) },
-      'Agree with this statement'
-    );
+      'Agree with this statement'  
+        );
+    }
+      
+ class Counter extends React.Component {
+  state = {
+    count: 125
+  };
+  handleClick = () => {
+    this.setState((prevState, { count }) => ({
+      count: prevState.count + 1
+    }));
+  };
+  render() {
+    return <button onClick={this.handleClick}>{this.state.count}</button>;
   }
+}
+
 }
 
 const domContainer = document.querySelector('#Agree_button');
