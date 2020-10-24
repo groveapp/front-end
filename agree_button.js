@@ -11,14 +11,15 @@ class AgreeButton extends React.Component {
   render() {
     if (this.state.clicked) {
       return 'Added one to the counter:';
-    }
+  }
 
-    return e(
-      'button',
-      { onClick: () => this.setState({ clicked: true }) },
-      'Agree with this statement'  
+  return e(
+    'button',
+    { onClick: () => this.setState({ clicked: true }) },
+    'Agree with this statement'  
         );
-    }
+ }
+  
 class Counter extends React.Component {
   state = {
     count: 125
