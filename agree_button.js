@@ -19,8 +19,7 @@ class AgreeButton extends React.Component {
       'Agree with this statement'  
         );
     }
-      
- class Counter extends React.Component {
+class Counter extends React.Component {
   state = {
     count: 125
   };
