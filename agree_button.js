@@ -1,5 +1,7 @@
 'use strict';
 
+//leo added this
+
 const e = React.createElement;
 
 class AgreeButton extends React.Component {
@@ -38,3 +40,4 @@ class Counter extends React.Component {
 
 const domContainer = document.querySelector('#agree_button_container');
 ReactDOM.render(e(AgreeButton), domContainer);
+
