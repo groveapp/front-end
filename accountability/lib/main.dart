@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/": (context) => SignUpScreen(),
           "/welcome": (context) => DashboardScreen(),
+          "/profile": (context) => ProfileScreen(),
         },
         theme: ThemeData(
           brightness: Brightness.dark,
@@ -17,8 +19,6 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.cyan[600],
           fontFamily: 'Century Gothic',
           textTheme: TextTheme(
-            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Century Gothic'),
           ),
         ));
@@ -29,7 +29,8 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar("Sign Up"),
+      appBar: buildAppBar("Sign Up", context),
+      drawer: buildDrawers(),
       body: Center(
           child: TextButton(
               onPressed: () {
@@ -47,30 +48,71 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar("Dashboard"),
+      appBar: buildAppBar("Dashboard", context),
       body: _buildColumns(),
+      drawer: buildDrawers(),
     );
   }
 }
 
-Widget buildAppBar(String title) {
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: buildAppBar("Dashboard", context),
+        drawer: buildDrawers(),
+        body: Center(child: Text("Hello")));
+  }
+}
+
+Widget buildAppBar(String title, BuildContext context) {
+  final AlertDialog dialog = signUpDialog();
   return AppBar(
-    leading: Icon(Icons.donut_large_sharp),
+    leading: InkWell(
+        onTap: () {
+          Scaffold.of(context).openDrawer();
+        },
+        child: Icon(Icons.donut_large_sharp)),
     title: Text(title),
     actions: [
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Text('Browse Politicians')),
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DashboardScreen()),
+                );
+              },
+              child: Text('Browse Politicians'))),
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Text('Browse Issues')),
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DashboardScreen()),
+                );
+              },
+              child: Text('Browse Issues'))),
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Text('Trending')),
+          child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DashboardScreen()),
+                );
+              },
+              child: Text('Trending'))),
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Icon(Icons.search)),
-      Icon(Icons.person)
+      IconButton(
+          onPressed: () {
+            showDialog<void>(context: context, builder: (context) => dialog);
+          },
+          icon: Icon(Icons.person))
     ],
   );
 }
@@ -83,29 +125,98 @@ Widget _buildColumns() {
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         Container(
             width: 300,
-            color: Colors.amber,
+            color: Colors.grey,
             child: Column(children: [fillColumns("New Politician Activity")])),
         Container(
             width: 300,
-            color: Colors.amber,
+            color: Colors.grey,
             child: Column(children: [fillColumns("New Issues")])),
         Container(
             width: 300,
-            color: Colors.amber,
+            color: Colors.grey,
             child: Column(children: [fillColumns("Followed Page Activity")]))
       ])));
 }
 
-Widget fillColumns(String title) {
-  return Column(children: [
-    Text(title),
-    Text("add info here"),
-    TextButton(
-        onPressed: () {
-          _buttonPress();
-        },
-        child: Text('Hello'))
-  ]);
+Widget fillColumns(String pageTitle) {
+  return Column(children: [Text(pageTitle), Text("Hello")]);
 }
 
-void _buttonPress() {}
+Widget buildDrawers() {
+  return Drawer(
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: const <Widget>[
+        DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.purple,
+          ),
+          child: Text(
+            'Name of Project',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+            ),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.satellite),
+          title: Text('Dashboard'),
+        ),
+        ListTile(
+          leading: Icon(Icons.account_circle),
+          title: Text('Profile'),
+        ),
+        ListTile(
+          leading: Icon(Icons.settings),
+          title: Text('Settings'),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget signUpDialog() {
+  return AlertDialog(
+    title: Text("Sign Up"),
+    contentPadding: EdgeInsets.symmetric(horizontal: 7, vertical: 7),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: 'First Name',
+            suffixIcon: Icon(
+              Icons.check_circle,
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF6200EE)),
+            ),
+          ),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: 'Last Name',
+            suffixIcon: Icon(
+              Icons.check_circle,
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF6200EE)),
+            ),
+          ),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: 'Address',
+            suffixIcon: Icon(
+              Icons.check_circle,
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF6200EE)),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
