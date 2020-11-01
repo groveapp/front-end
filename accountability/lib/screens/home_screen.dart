@@ -26,26 +26,27 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 ListTile(
-                  title: const Text('Welcome to [NAME]'),
+                  title: const Text('Welcome to The Accountability App'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'A place where you can do x,y,z',
-                    style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    "A place where you can do x,y,z",
+                    style: TextStyle(color: Colors.grey),
+                    textAlign: TextAlign.left,
                   ),
                 ),
                 ButtonBar(
                   alignment: MainAxisAlignment.start,
                   children: [
-                    TextButton(
+                    ElevatedButton(
                         onPressed: () {
                           showDialog<void>(
                               context: context,
                               builder: (context) => dialogSignIn);
                         },
                         child: Text("Sign In")),
-                    TextButton(
+                    ElevatedButton(
                         onPressed: () {
                           showDialog<void>(
                               context: context,
@@ -59,10 +60,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Card(
               child: Column(children: [
-            ListTile(title: Text("Trending Issue #1")),
-            ListTile(title: Text("Trending Issue #2")),
-            ListTile(title: Text("Trending Issue #3"))
-          ]))
+            ListTile(
+                title: Text("Trending Issue #1"),
+                subtitle: Text("Some things about Trending Issue #1")),
+          ])),
+          Card(
+              child: Column(children: [
+            ListTile(
+                title: Text("Trending Issue #2"),
+                subtitle: Text("Some things about Trending Issue #2")),
+          ])),
+          Card(
+              child: Column(children: [
+            ListTile(
+                title: Text("Trending Issue #3"),
+                subtitle: Text("Some things about Trending Issue #3")),
+          ])),
         ]))));
   }
 }

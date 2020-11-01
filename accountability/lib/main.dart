@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'routes.dart';
-import 'routing_constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: generateRoute,
         initialRoute: HomeScreenRoute,
         theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primaryColor: Colors.purple,
           accentColor: Colors.cyan[600],
           fontFamily: 'Roboto',
@@ -27,3 +26,4 @@ class MyApp extends StatelessWidget {
 //ADD SCALE INSTEAD OF AGREE/DISAGREE
 //GUMBO
 //Jambalaya
+//Add Sign Up Links from organizations
