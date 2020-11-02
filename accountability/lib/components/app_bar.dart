@@ -25,7 +25,7 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, BrowseIssuesScreenRoute);
+                Navigator.pushNamed(context, IssuePageTemplateRoute);
               },
               child: Text('Browse Issues'))),
       Padding(

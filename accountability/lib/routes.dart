@@ -5,6 +5,7 @@ import 'screens/browse_issues_screen.dart';
 import 'screens/browse_politicians_screen.dart';
 import 'screens/search_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/issue_page_template.dart';
 
 const String HomeScreenRoute = '/';
 const String ProfileScreenRoute = 'profile';
@@ -12,6 +13,7 @@ const String DashboardScreenRoute = 'dashboard';
 const String BrowseIssuesScreenRoute = 'browse_issues';
 const String BrowsePoliticiansScreenRoute = 'browse_politicians';
 const String SearchPageRoute = 'search';
+const String IssuePageTemplateRoute = 'issues';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -27,6 +29,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => BrowsePoliticiansScreen());
     case SearchPageRoute:
       return MaterialPageRoute(builder: (context) => SearchScreen());
+    case IssuePageTemplateRoute:
+      return MaterialPageRoute(builder: (context) => IssueScreen());
     default:
       return MaterialPageRoute(builder: (context) => HomeScreen());
   }

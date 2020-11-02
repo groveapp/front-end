@@ -58,24 +58,30 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Card(
-              child: Column(children: [
-            ListTile(
-                title: Text("Trending Issue #1"),
-                subtitle: Text("Some things about Trending Issue #1")),
-          ])),
-          Card(
-              child: Column(children: [
-            ListTile(
-                title: Text("Trending Issue #2"),
-                subtitle: Text("Some things about Trending Issue #2")),
-          ])),
-          Card(
-              child: Column(children: [
-            ListTile(
-                title: Text("Trending Issue #3"),
-                subtitle: Text("Some things about Trending Issue #3")),
-          ])),
+          issueList()
         ]))));
   }
+}
+
+Widget issueList() {
+  return Column(children: [
+    Card(
+        child: Column(children: [
+      ListTile(
+          title: Text("Trending Issue #1"),
+          subtitle: Text("Some things about Trending Issue #1")),
+    ])),
+    Card(
+        child: Column(children: [
+      ListTile(
+          title: Text("Trending Issue #2"),
+          subtitle: Text("Some things about Trending Issue #2")),
+    ])),
+    Card(
+        child: Column(children: [
+      ListTile(
+          title: Text("Trending Issue #3"),
+          subtitle: Text("Some things about Trending Issue #3")),
+    ])),
+  ]);
 }

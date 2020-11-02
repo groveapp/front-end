@@ -42,7 +42,31 @@ Widget buildDrawers(BuildContext context) {
         ListTile(
           leading: Icon(Icons.account_circle),
           title: TextButton(
-            child: Text(('Profile')),
+            child: Text(('My Profile')),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                ProfileScreenRoute,
+              );
+            },
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.group),
+          title: TextButton(
+            child: Text(('My Organizations')),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                ProfileScreenRoute,
+              );
+            },
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.emoji_people),
+          title: TextButton(
+            child: Text(('My Politicians')),
             onPressed: () {
               Navigator.pushNamed(
                 context,
