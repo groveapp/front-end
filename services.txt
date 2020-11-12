@@ -1,5 +1,0 @@
-Front-end:
-- Flutter (using Dart)
-
-Back-end:
-- Firebase
