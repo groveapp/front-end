@@ -10,10 +10,16 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     Key _drawerKey = new GlobalKey();
+
+    MediaQueryData queryData = MediaQuery.of(context);
+
+    double screenWidth = queryData.size.width;
+    double screenHeight = queryData.size.height - kToolbarHeight;
     return Scaffold(
       key: _drawerKey,
       appBar: buildAppBar("Dashboard", context, _drawerKey),
-      body: _buildColumns(),
+      body: SizedBox(
+          width: screenWidth, height: screenHeight, child: _buildColumns()),
       drawer: buildDrawers(context),
     );
   }
@@ -71,6 +77,6 @@ Widget _buildColumns() {
   );
 }
 
-Widget fillColumns(String pageTitle) {
-  return Column(children: [Text(pageTitle), Text("Hello")]);
+Widget fillColumns(String columnTitle) {
+  return Column(children: [Text(columnTitle), SelectableText("Hello")]);
 }

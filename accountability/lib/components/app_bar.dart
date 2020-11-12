@@ -7,20 +7,32 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
   final AlertDialog dialogSignUp = signUpDialog();
   final AlertDialog dialogSignIn = signInDialog();
   return AppBar(
-    leading: IconButton(
-        onPressed: () {
+    leading: InkWell(
+        onTap: () {
           _drawerKey.currentState.openDrawer();
         },
-        icon: Icon(Icons.donut_large_sharp)),
+        onHover: (value) {
+          if (value = true) {
+            _drawerKey.currentState.openDrawer();
+          } else {
+            _drawerKey.currentState.closeDrawer();
+          }
+        },
+        child: Icon(Icons.donut_large_sharp)),
     title: Text(title),
     actions: [
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, BrowsePoliticiansScreenRoute);
-              },
-              child: Text('Browse Politicians'))),
+          child: Theme(
+              data: ThemeData(
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent),
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, BrowsePoliticiansScreenRoute);
+                  },
+                  style: ButtonStyle(enableFeedback: false),
+                  child: Text('Browse Politicians')))),
       Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: TextButton(
@@ -42,31 +54,34 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
         width: 400,
         height: 40,
         child: TextFormField(
+          onEditingComplete: () {
+            _search("add value here");
+          },
           decoration: InputDecoration(
             labelText: 'Search issues and politicians',
-            labelStyle: TextStyle(color: Colors.black),
+            labelStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
             suffixIcon: IconButton(
               onPressed: () {
                 _search("Add Value Here");
               },
-              icon: Icon(Icons.search, color: Colors.black),
+              icon: Icon(Icons.search, color: Colors.grey),
             ),
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Color(0xFF6200EE)),
-            ),
+            //enabledBorder: UnderlineInputBorder(
+            //borderSide: BorderSide(color: Color(0xFF6200EE)),
+            // ),
           ),
           onFieldSubmitted: (value) {
             _search(value);
           },
         ),
       ),
-      TextButton(
+      ElevatedButton(
           onPressed: () {
             showDialog<void>(
                 context: context, builder: (context) => dialogSignIn);
           },
           child: Text("Sign In")),
-      TextButton(
+      ElevatedButton(
           onPressed: () {
             showDialog<void>(
                 context: context, builder: (context) => dialogSignUp);

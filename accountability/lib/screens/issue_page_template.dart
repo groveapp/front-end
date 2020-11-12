@@ -3,6 +3,8 @@ import 'package:accountability/components/app_bar.dart';
 import 'package:accountability/components/left_drawer.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
+//ADD PIE CHART BY FACTOR
+
 class IssueScreen extends StatefulWidget {
   @override
   State createState() => new _IssueScreenState();
@@ -15,6 +17,9 @@ class _IssueScreenState extends State<IssueScreen> {
 
   Widget build(BuildContext context) {
     Key _drawerKey = new GlobalKey();
+    MediaQueryData queryData = MediaQuery.of(context);
+    double screenWidth = queryData.size.width;
+    double screenHeight = queryData.size.height - kToolbarHeight;
     return Scaffold(
       key: _drawerKey,
       appBar: buildAppBar("Issue Page", context, _drawerKey),
@@ -24,23 +29,30 @@ class _IssueScreenState extends State<IssueScreen> {
           //   return _buildNormalContainer();
           // }},
           //  child: _buildIssueBody(controller)),
-          _buildIssueBody(controller),
+          SizedBox(
+              width: screenWidth,
+              height: screenHeight,
+              child: _buildIssueBody(controller, screenWidth, screenHeight)),
       drawer: buildDrawers(context),
     );
   }
 }
 
-Widget _buildIssueBody(controller) {
-  return Container(
-      child: DraggableScrollbar.arrows(
-          controller: controller,
-          child: ListView(children: [
-            Column(children: [
-              _buildIssueHeader(),
-              _buildViewPointList(),
-              _buildIssueBottom()
-            ])
-          ])));
+Widget _buildIssueBody(controller, screenWidth, screenHeight) {
+  if (screenWidth >= 1000) {
+    return Container(
+        child: DraggableScrollbar.arrows(
+            controller: controller,
+            child: ListView(children: [
+              Column(children: [
+                _buildIssueHeader(),
+                _buildViewPointList(),
+                _buildIssueBottom()
+              ])
+            ])));
+  } else {
+    return Text("Hello");
+  }
 }
 
 Widget _buildIssueHeader() {
@@ -48,8 +60,14 @@ Widget _buildIssueHeader() {
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          child: Row(children: [
-            Column(children: [Text("Issue Name"), Text("Organization")]),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Column(children: [
+              Text("Issue Name",
+                  style: TextStyle(fontSize: 24), textAlign: TextAlign.left),
+              Text("Organization",
+                  style: TextStyle(fontSize: 18), textAlign: TextAlign.left),
+            ]),
             Column(children: [
               Text("Page Metrics"),
               Text("Views"),
@@ -69,9 +87,12 @@ Widget _buildViewPointList() {
       child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildViewpointCard(
-                  "viewpointName", "viewpointTextSummary", "viewpointTextLong"),
+              Transform(
+                  child: _buildViewpointCard("viewpointName",
+                      "viewpointTextSummary", "viewpointTextLong"),
+                  transform: Matrix4.identity()..scale(0.5)),
               _buildViewpointCard(
                   "viewpointName", "viewpointTextSummary", "viewpointTextLong"),
               _buildViewpointCard(
@@ -90,34 +111,44 @@ Widget _buildViewPointList() {
 
 Widget _buildViewpointCard(String viewpointName, String viewpointTextSummary,
     String viewpointTextLong) {
+  double _currentValue = 5;
   return Card(
+      clipBehavior: Clip.hardEdge,
       child: Column(children: [
-    Row(
-      children: [
-        SelectableText(viewpointName),
-        IconButton(icon: Icon(Icons.flag), onPressed: () {})
-      ],
-    ),
-    FittedBox(
-      child: SelectableText(viewpointTextSummary),
-    ),
-    TextButton(
-        child: Text("Expand Viewpoint and Show Replies"), onPressed: () {}),
-    Column(children: [
-      SelectableText("# Agrees:"),
-      SelectableText("# Disagrees:")
-    ]),
-    Column(children: [
-      TextButton(
-          child: SelectableText("Supporting Organizations"), onPressed: () {}),
-      TextButton(child: SelectableText("Supporting Leaders"), onPressed: () {})
-    ]),
-    ButtonBar(children: [
-      ElevatedButton(child: Text("Agree"), onPressed: () {}),
-      ElevatedButton(child: Text("Disagree"), onPressed: () {}),
-      Slider(value: 5, min: 0, max: 10, onChanged: (value) {})
-    ])
-  ]));
+        Row(
+          children: [
+            SelectableText(viewpointName),
+            IconButton(icon: Icon(Icons.flag), onPressed: () {})
+          ],
+        ),
+        FittedBox(
+          child: SelectableText(viewpointTextSummary),
+        ),
+        TextButton(
+            child: Text("Expand Viewpoint and Show Replies"), onPressed: () {}),
+        Column(children: [
+          SelectableText("# Agrees:"),
+          SelectableText("# Disagrees:")
+        ]),
+        Column(children: [
+          TextButton(
+              child: SelectableText("Supporting Organizations"),
+              onPressed: () {}),
+          TextButton(
+              child: SelectableText("Supporting Leaders"), onPressed: () {})
+        ]),
+        ButtonBar(children: [
+          ElevatedButton(child: Text("Agree"), onPressed: () {}),
+          ElevatedButton(child: Text("Disagree"), onPressed: () {}),
+        ]),
+        ButtonBar(children: [
+          Slider(
+              value: _currentValue,
+              min: 0,
+              max: 10,
+              onChanged: (double value) {})
+        ])
+      ]));
 }
 
 Widget _buildIssueBottom() {

@@ -13,17 +13,30 @@ class MyApp extends StatelessWidget {
         initialRoute: HomeScreenRoute,
         theme: ThemeData(
           brightness: Brightness.light,
-          primaryColor: Colors.purple,
-          accentColor: Colors.cyan[600],
+          primaryColor: const Color(0xFF424242),
+          accentColor: const Color(0xAA424242),
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
           fontFamily: 'Roboto',
           textTheme: TextTheme(
-            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Roboto'),
+            headline1: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
+            headline2: TextStyle(fontSize: 36.0),
+            bodyText1: TextStyle(fontSize: 14.0),
+            bodyText2: TextStyle(fontSize: 14.0, color: Colors.black),
           ),
         ));
   }
 }
 
 //ADD SCALE INSTEAD OF AGREE/DISAGREE
-//GUMBO
-//Jambalaya
+//Names: Gumbo, Jambalaya, Ideaflow, Ebb and Flow, Flux, Tide, Hightide, Peptide, Pendulum, Harmonic, Indicate, Anthropos, Candela, Lumiere, Civ_, Cred, Perspective, dynasty, epistemic, domain,
+//federos, Fidencem, Syncracy, Idiosyncracy, iso, liberdad, Nominal, Pacific, Palustrade, Symplectomorphism
 //Add Sign Up Links from organizations
+//Colors: Blue, Green, Gray, Black, Light Purple
+
+/*
+purple: #a6a6ff
+teal: 02EEE6, 52B6C, 216060
+blue: 4D82AF
+*/

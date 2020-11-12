@@ -1,0 +1,17 @@
+/*
+if device screen is over X pixels:
+  three column vertical layout
+if device screen is over Y pixels but under X pixels: 
+  rowwise horizontal layout
+
+
+*/
+import 'package:flutter/material.dart';
+
+Widget sizeScreen(context) {
+  MediaQueryData queryData = MediaQuery.of(context);
+  double screenWidth = queryData.size.width;
+  double screenHeight = queryData.size.height - kToolbarHeight;
+  if (screenWidth > 600) {return verticalLayout()}
+  else {return }
+}
