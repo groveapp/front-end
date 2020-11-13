@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
 
 //ADD SCALE INSTEAD OF AGREE/DISAGREE
 //Names: Gumbo, Jambalaya, Ideaflow, Ebb and Flow, Flux, Tide, Hightide, Peptide, Pendulum, Harmonic, Indicate, Anthropos, Candela, Lumiere, Civ_, Cred, Perspective, dynasty, epistemic, domain,
-//federos, Fidencem, Syncracy, Idiosyncracy, iso, liberdad, Nominal, Pacific, Palustrade, Symplectomorphism
+//federos, Fidencem, Syncracy, Idiosyncracy, iso, liberdad, Nominal, Pacific, Palustrade, Symplectomorphism, Viewpoint
 //Add Sign Up Links from organizations
 //Colors: Blue, Green, Gray, Black, Light Purple
 

@@ -3,7 +3,6 @@ import 'package:accountability/components/app_bar.dart';
 import 'package:accountability/components/left_drawer.dart';
 import 'package:accountability/components/sign_in_dialog.dart';
 import 'package:accountability/components/sign_up_dialog.dart';
-import 'package:accountability/components/viewpoint_card.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -99,7 +98,6 @@ Widget issueList() {
           title: Text("Trending Issue #3"),
           subtitle: Text("Some things about Trending Issue #3")),
     ])),
-    buildViewpointCard('2444224')
   ]);
 }
 

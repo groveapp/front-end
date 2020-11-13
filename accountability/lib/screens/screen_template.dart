@@ -29,24 +29,25 @@ class _ViewpointCardState extends State<ViewpointCard> {
       appBar: buildAppBar("Issue Page", context, _drawerKey),
       body: Center(
         child: Transform(
-            transform: Matrix4.identity()..scale(0.75),
-            child:
-                _buildViewpoints(screenWidth, screenHeight, sampleViewpoint)),
+            transform: Matrix4.identity()..scale(0.5),
+            child: buildViewpoints(screenWidth, screenHeight, sampleViewpoint)),
       ),
       drawer: buildDrawers(context),
     );
   }
 }
 
-Widget _buildViewpoints(screenWidth, screenHeight, viewpoint) {
+Widget buildViewpoints(screenWidth, screenHeight, viewpoint) {
   double _currentValue = 5;
   int numAgrees = viewpoint.numAgrees;
   int numDisagrees = viewpoint.numDisagrees;
   int popularityRank = viewpoint.popularityRank;
-  return SizedBox(
-      width: screenWidth,
-      height: screenHeight,
-      child: Center(
+  return
+      // SizedBox(
+      //     width: screenWidth,
+      //     height: screenHeight,
+      //     child:
+      Center(
           child: Container(
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               child: SizedBox(
@@ -143,7 +144,9 @@ Widget _buildViewpoints(screenWidth, screenHeight, viewpoint) {
                     ])
                   ],
                 )),
-              ))));
+              )))
+      //)
+      ;
 }
 
 class ViewpointData {

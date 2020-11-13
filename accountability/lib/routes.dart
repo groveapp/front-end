@@ -1,3 +1,5 @@
+import 'package:accountability/screens/issue_page_skeleton.dart';
+
 import 'screens/dashboard_screen.dart';
 import 'screens/home_screen.dart';
 //import 'screens/profile_screen.dart';
@@ -5,7 +7,7 @@ import 'screens/browse_issues_screen.dart';
 import 'screens/browse_politicians_screen.dart';
 import 'screens/search_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/issue_page_template.dart';
+//import 'screens/issue_page_template.dart';
 import 'screens/screen_template.dart';
 
 const String HomeScreenRoute = '/';
@@ -51,7 +53,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case SearchPageRoute:
       return ExMaterialPageRoute(builder: (context) => SearchScreen());
     case IssuePageTemplateRoute:
-      return ExMaterialPageRoute(builder: (context) => IssueScreen());
+      return ExMaterialPageRoute(builder: (context) => IssueCard());
     default:
       return ExMaterialPageRoute(builder: (context) => HomeScreen());
   }
