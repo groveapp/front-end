@@ -1,0 +1,19 @@
+First Up: Finish Viewpoint Card, Create Issue Card
+
+
+Main:
+- Add themes and styles and color schemes
+AppBar:
+ - Fix search
+ - Fix sign in/sign up dialogs
+ - Add a signed in key
+ - Fix logo button
+ - Remove TextButton splash
+ Drawer:
+ - Add all necessary pages
+ Routes:
+ - Replace routes with links
+ Home:
+ - Create list of trending issue cards
+ - Write description
+Add Other Screens
