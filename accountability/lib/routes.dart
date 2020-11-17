@@ -1,14 +1,13 @@
 import 'package:accountability/screens/issue_page_skeleton.dart';
+import 'package:accountability/screens/profile_screen.dart';
 
 import 'screens/dashboard_screen.dart';
 import 'screens/home_screen.dart';
-//import 'screens/profile_screen.dart';
+import 'screens/profile_screen.dart';
 import 'screens/browse_issues_screen.dart';
 import 'screens/browse_politicians_screen.dart';
 import 'screens/search_screen.dart';
 import 'package:flutter/material.dart';
-//import 'screens/issue_page_template.dart';
-import 'screens/screen_template.dart';
 
 const String HomeScreenRoute = '/';
 const String ProfileScreenRoute = '/profile';
@@ -16,7 +15,7 @@ const String DashboardScreenRoute = '/dashboard';
 const String BrowseIssuesScreenRoute = '/browse_issues';
 const String BrowsePoliticiansScreenRoute = '/browse_politicians';
 const String SearchPageRoute = '/search';
-const String IssuePageTemplateRoute = '/issues';
+const String IssueScreenRoute = '/issues';
 
 class ExMaterialPageRoute<T> extends MaterialPageRoute<T> {
   ExMaterialPageRoute({
@@ -44,7 +43,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case DashboardScreenRoute:
       return ExMaterialPageRoute(builder: (context) => DashboardScreen());
     case ProfileScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => ViewpointCard());
+      return ExMaterialPageRoute(builder: (context) => ProfileScreen());
     case BrowseIssuesScreenRoute:
       return ExMaterialPageRoute(builder: (context) => BrowseIssuesScreen());
     case BrowsePoliticiansScreenRoute:
@@ -52,8 +51,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           builder: (context) => BrowsePoliticiansScreen());
     case SearchPageRoute:
       return ExMaterialPageRoute(builder: (context) => SearchScreen());
-    case IssuePageTemplateRoute:
-      return ExMaterialPageRoute(builder: (context) => IssueCard());
+    case IssueScreenRoute:
+      return ExMaterialPageRoute(builder: (context) => IssueScreen());
     default:
       return ExMaterialPageRoute(builder: (context) => HomeScreen());
   }

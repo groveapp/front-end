@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:accountability/components/app_bar.dart';
-import 'package:accountability/components/left_drawer.dart';
+import 'package:accountability/components/screen_components/app_bar.dart';
+import 'package:accountability/components/screen_components/left_drawer.dart';
 
 class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:accountability/routes.dart';
 import 'package:flutter/material.dart';
-import 'sign_in_dialog.dart';
-import 'sign_up_dialog.dart';
+import '../sign_in_dialog.dart';
+import '../sign_up_dialog.dart';
 
 Widget buildAppBar(String title, BuildContext context, _drawerKey) {
   final AlertDialog dialogSignUp = signUpDialog();
@@ -37,7 +37,7 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, IssuePageTemplateRoute);
+                Navigator.pushNamed(context, IssueScreenRoute);
               },
               child: Text('Browse Issues'))),
       Padding(
@@ -51,7 +51,7 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
               },
               child: Text('Trending'))),
       SizedBox(
-        width: 400,
+        width: 200,
         height: 40,
         child: TextFormField(
           onEditingComplete: () {

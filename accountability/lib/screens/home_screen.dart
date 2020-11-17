@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:accountability/components/app_bar.dart';
-import 'package:accountability/components/left_drawer.dart';
+import 'package:accountability/components/screen_components/app_bar.dart';
+import 'package:accountability/components/screen_components/left_drawer.dart';
 import 'package:accountability/components/sign_in_dialog.dart';
 import 'package:accountability/components/sign_up_dialog.dart';
+import 'package:accountability/components/screen_components/footer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         key: _drawerKey,
         appBar: buildAppBar("Home", context, _drawerKey),
         drawer: buildDrawers(context),
+        bottomSheet: buildFooter(),
         body: SizedBox(
             width: screenWidth,
             height: screenHeight,

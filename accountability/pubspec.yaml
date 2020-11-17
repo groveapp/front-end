@@ -33,6 +33,8 @@ dependencies:
 
   charts_flutter: ^0.9.0
 
+  scroll_snap_list: ^0.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
