@@ -10,7 +10,7 @@ TextStyle title1() {
 TextStyle subtitle1() {
   return TextStyle(
     color: Colors.grey,
-    fontSize: 36,
+    fontSize: 16,
   );
 }
 
@@ -26,4 +26,8 @@ TextStyle body1() {
     color: Colors.black,
     fontSize: 12,
   );
+}
+
+TextStyle title3() {
+  return TextStyle(color: Colors.black, fontSize: 24);
 }

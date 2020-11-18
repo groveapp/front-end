@@ -19,7 +19,8 @@ Widget buildRelatedBillsList() {
             ListTile(title: Text("Measure ABCD"), subtitle: Text("Tulsa")),
             ListTile(title: Text("Measure ABCD"), subtitle: Text("Tulsa")),
             ListTile(title: Text("Measure ABCD"), subtitle: Text("Tulsa")),
-            TextButton(child: Text("View More"), onPressed: () {})
+            TextButton(child: Text("View More"), onPressed: () {}),
+            TextButton(child: Text("Add A Measure"), onPressed: () {})
           ],
         ))
   ]);

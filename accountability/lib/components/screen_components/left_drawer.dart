@@ -58,7 +58,7 @@ Widget buildDrawers(BuildContext context) {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                ProfileScreenRoute,
+                MyOrganizationsScreenRoute,
               );
             },
           ),
@@ -70,7 +70,7 @@ Widget buildDrawers(BuildContext context) {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                ProfileScreenRoute,
+                MyPoliticiansScreenRoute,
               );
             },
           ),

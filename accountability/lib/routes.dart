@@ -1,4 +1,5 @@
 import 'package:accountability/screens/issue_page_skeleton.dart';
+import 'package:accountability/screens/my_organizations_screen.dart';
 import 'package:accountability/screens/profile_screen.dart';
 
 import 'screens/dashboard_screen.dart';
@@ -8,6 +9,7 @@ import 'screens/browse_issues_screen.dart';
 import 'screens/browse_politicians_screen.dart';
 import 'screens/search_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/my_politicians_screen.dart';
 
 const String HomeScreenRoute = '/';
 const String ProfileScreenRoute = '/profile';
@@ -16,6 +18,8 @@ const String BrowseIssuesScreenRoute = '/browse_issues';
 const String BrowsePoliticiansScreenRoute = '/browse_politicians';
 const String SearchPageRoute = '/search';
 const String IssueScreenRoute = '/issues';
+const String MyPoliticiansScreenRoute = '/my_politicians';
+const String MyOrganizationsScreenRoute = '/my_organizations';
 
 class ExMaterialPageRoute<T> extends MaterialPageRoute<T> {
   ExMaterialPageRoute({
@@ -53,6 +57,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return ExMaterialPageRoute(builder: (context) => SearchScreen());
     case IssueScreenRoute:
       return ExMaterialPageRoute(builder: (context) => IssueScreen());
+    case MyPoliticiansScreenRoute:
+      return ExMaterialPageRoute(builder: (context) => MyPoliticiansScreen());
+    case MyOrganizationsScreenRoute:
+      return ExMaterialPageRoute(builder: (context) => MyOrganizationsScreen());
     default:
       return ExMaterialPageRoute(builder: (context) => HomeScreen());
   }
