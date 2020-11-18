@@ -1,10 +1,3 @@
 # accountability
-Home for all things [cool name here]
 
-quick shortcut for locally hosting html file:
- on command line, in folder, type:
-  py -m http.server 1234
- then open up brower and type in https://localhost:1234
-
-not sure what exactly this is but it seems cool:
-https://state.com/
+We can break this app down by looking at organizations. Each organization (whether it be the US Federal Government, your City Council, a Student Government, a club, an advocacy group, or even a private company) can have an internal and an external side. On the internal side, the users are the employees or members of the organization, and on the external side, the users are the public (or a subset of the public selected by the organization). For both sides, the main content will be in the form of issue pages. On issue pages (which can be added top-down by the organization leaders or botton-up by its members), the community will be able to add their viewpoints on the issue.
