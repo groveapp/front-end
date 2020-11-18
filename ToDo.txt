@@ -17,3 +17,12 @@ AppBar:
  - Create list of trending issue cards
  - Write description
 Add Other Screens
+
+- Map function
+- Search
+- Politician Page
+- Organization Page
+- Messages
+- Tutorial
+- Organization sending links and ways to verify users (by address, email address, etc)
+- Sharing links/emails
