@@ -26,3 +26,4 @@ Add Other Screens
 - Tutorial
 - Organization sending links and ways to verify users (by address, email address, etc)
 - Sharing links/emails
+- Sub-organizations
