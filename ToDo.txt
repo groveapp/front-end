@@ -22,6 +22,10 @@ Add Other Screens
 - Search
 - Politician Page
 - Organization Page
+- Browse Issues
+- Browse Politicians
+- Browse Organizations
+- Browse Issues and Leaders Within an Organization
 - Messages
 - Tutorial
 - Organization sending links and ways to verify users (by address, email address, etc)
