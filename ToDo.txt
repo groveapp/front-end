@@ -29,5 +29,12 @@ Add Other Screens
 - Sub-organizations
 - Accessibility
 - Internationalization
+- Scrollbars
+- Refactoring
+- Dialog for adding issues, viewpoints, and politician action
+- Fact-checking
+- Expert designation
+- Moderation
+- Community policy
 
 - Backend
