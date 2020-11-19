@@ -5,7 +5,7 @@ import 'package:accountability/components/screen_components/app_bar.dart';
 import 'package:accountability/components/screen_components/left_drawer.dart';
 import 'package:accountability/components/page_summary_card.dart';
 
-class MyFollowedPagesScreen extends StatelessWidget {
+class MyLeadersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Key _drawerKey = new GlobalKey();
     MediaQueryData queryData = MediaQuery.of(context);
@@ -13,7 +13,7 @@ class MyFollowedPagesScreen extends StatelessWidget {
     double screenHeight = queryData.size.height - kToolbarHeight;
     return Scaffold(
       key: _drawerKey,
-      appBar: buildAppBar("Dashboard", context, _drawerKey),
+      appBar: buildAppBar("My Leaders", context, _drawerKey),
       body: _buildBody(screenWidth, screenHeight),
       drawer: buildDrawers(context),
     );
@@ -28,21 +28,23 @@ Widget _buildBody(screenWidth, screenHeight) {
         children: [
           Container(
               alignment: Alignment.centerLeft,
-              child: Text("Followed Pages", style: title2())),
+              child: Text("My Leaders", style: title2())),
           Expanded(
             child: GridView.count(
                 childAspectRatio: 3 / 2,
                 crossAxisCount: numColumns,
                 mainAxisSpacing: 0,
                 children: [
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
-                  _followedPage(sampleIssuePage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
+                  _myLeaders(sampleLeaderPage),
                   // Container(
                   //     padding:
                   //         EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -54,6 +56,6 @@ Widget _buildBody(screenWidth, screenHeight) {
       ));
 }
 
-Widget _followedPage(page) {
-  return buildSummaryCard(page);
+Widget _myLeaders(leader) {
+  return buildSummaryCard(leader);
 }

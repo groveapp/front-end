@@ -8,6 +8,8 @@ import 'package:accountability/components/issue_card_components/viewpoint_list.d
 import 'package:accountability/util/sample_data.dart';
 import 'package:accountability/components/issue_card_components/viewpoint_list2.dart';
 
+//ADD PICTURE BANNER TO THE TOP
+
 Widget buildIssue(screenWidth, screenHeight, issue) {
   int numResponses = issue.numResponses;
   int numExpertResponses = issue.numExpertResponses;
@@ -26,6 +28,12 @@ Widget buildIssue(screenWidth, screenHeight, issue) {
                 child: Card(
                     child: Column(
                   children: [
+                    // Image.asset(
+                    //   issue.image,
+                    //   height: 400,
+                    //   width: screenWidth,
+                    //   fit: BoxFit.fitHeight,
+                    // ),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,

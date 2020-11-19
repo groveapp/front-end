@@ -1,3 +1,4 @@
+import 'package:accountability/components/page_summary_card.dart';
 import 'package:accountability/styles.dart';
 import 'package:accountability/util/sample_data.dart';
 import 'package:flutter/material.dart';
@@ -34,11 +35,13 @@ Widget _buildBody(screenWidth, screenHeight) {
                 crossAxisCount: numColumns,
                 mainAxisSpacing: 0,
                 children: [
-                  _myOrganizations(sampleOrganization),
-                  _myOrganizations(sampleOrganization),
-                  _myOrganizations(sampleOrganization),
-                  _myOrganizations(sampleOrganization),
-                  _myOrganizations(sampleOrganization),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
+                  _myOrganizations(sampleOrganizationPage),
                   Container(
                       height: 400,
                       width: 400,
@@ -54,80 +57,5 @@ Widget _buildBody(screenWidth, screenHeight) {
 }
 
 Widget _myOrganizations(organization) {
-  return Center(
-          child: Container(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              child: SizedBox(
-                height: 400,
-                width: 400,
-                child: Card(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset('images/barack-obama-main.jpg',
-                        width: 400, height: 200, fit: BoxFit.cover),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16, horizontal: 16),
-                              child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SelectableText(
-                                      "${organization.name}",
-                                      style: title3(),
-                                    ),
-                                    SelectableText(
-                                        "${organization.organizationArea}",
-                                        style: subtitle1()),
-                                    SelectableText(
-                                        "${organization.numMembers} Members",
-                                        style: subtitle1())
-                                  ]),
-                            ),
-                          ),
-                          // Container(
-                          //     padding: EdgeInsets.symmetric(
-                          //         vertical: 16, horizontal: 8),
-                          //     child: Column(
-                          //         mainAxisAlignment:
-                          //             MainAxisAlignment.spaceEvenly,
-                          //         crossAxisAlignment: CrossAxisAlignment.start,
-                          //         children: [
-                          //           SelectableText(
-                          //               "${leader.approvals} Approvals",
-                          //               style: TextStyle(
-                          //                   fontSize: 14, color: Colors.grey)),
-                          //           SelectableText(
-                          //               "${leader.disapprovals} Disapprovals",
-                          //               style: TextStyle(
-                          //                   fontSize: 14, color: Colors.grey)),
-                          //           SelectableText(
-                          //               "${leader.estimatedApprovalRating}% Estimated Approval",
-                          //               style: TextStyle(
-                          //                   fontSize: 14, color: Colors.grey))
-                          //         ])),
-                          Container(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16, horizontal: 8),
-                              child: Row(children: [
-                                IconButton(
-                                    icon: Icon(Icons.message_rounded, size: 24),
-                                    color: Colors.deepPurple,
-                                    onPressed: () {}),
-                              ]))
-                        ]),
-                    TextButton(
-                        child:
-                            Text("More Info", style: TextStyle(fontSize: 16)),
-                        onPressed: () {}),
-                  ],
-                )),
-              )))
-      //)
-      ;
+  return buildSummaryCard(organization);
 }

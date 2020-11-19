@@ -70,7 +70,7 @@ Widget buildDrawers(BuildContext context) {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                MyPoliticiansScreenRoute,
+                MyLeadersScreenRoute,
               );
             },
           ),

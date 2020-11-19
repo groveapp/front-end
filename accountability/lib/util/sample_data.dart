@@ -1,3 +1,5 @@
+import 'data_structures.dart';
+
 class IssueData {
   String title;
   String organizationLevel;
@@ -5,13 +7,14 @@ class IssueData {
   int numResponses;
   int numExpertResponses;
   int popularityRank;
+  String image;
 
   IssueData(this.title, this.organizationLevel, this.summary, this.numResponses,
-      this.numExpertResponses, this.popularityRank);
+      this.numExpertResponses, this.popularityRank, this.image);
 }
 
 var sampleIssue = IssueData("Issue Title", "City of Los Angeles",
-    "This is an issue summary.", 54, 79, 5);
+    "This is an issue summary.", 54, 79, 5, "images/barack-obama-main.jpg");
 
 class ViewpointData {
   String title;
@@ -79,3 +82,45 @@ var sampleOrganization = OrganizationData(
   2400,
   538,
 );
+
+class PageData {
+  String pageName;
+  String organizationLevel;
+  String organizationArea;
+  int numResponses;
+  int numViewpoints;
+
+  PageData(
+    this.pageName,
+    this.organizationLevel,
+    this.organizationArea,
+    this.numResponses,
+    this.numViewpoints,
+  );
+}
+
+var samplePage = PageData(
+    "Sidewalk Repairs", "City of Pittsburgh", "Pittsburgh, USA", 88, 5);
+
+class QueryArgs {
+  final String query;
+  QueryArgs(this.query);
+}
+
+class SearchResult {
+  String name;
+  String type;
+
+  SearchResult(this.name, this.type);
+}
+
+var sampleSearchResult = SearchResult("BarackObama", 'leader');
+
+var sampleLeaderPage = LeaderSummaryData("Barack", "Obama", "Test 1", "Test@",
+    "Blah Blah", 56, 67, 23, 'images/barack-obama-main.jpg');
+
+var sampleOrganizationPage = OrganizationSummaryData("Federal Government",
+    "United States", 53, 33, 'images/barack-obama-main.jpg');
+
+var sampleIssuePage = IssueSummaryData(
+    "Sidewalk Repair", "City of Pittsburgh", "United States", 33, 33);

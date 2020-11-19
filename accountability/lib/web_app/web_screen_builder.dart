@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:accountability/components/screen_components/app_bar.dart';
 import 'package:accountability/components/screen_components/left_drawer.dart';
-import 'package:accountability/components/screen_components/tab_bar.dart';
 import 'package:accountability/components/screen_components/footer.dart';
 
-class Screen extends StatefulWidget {
+class WebScreen extends StatefulWidget {
+  final Widget screenBody;
+
+  WebScreen(this.screenBody);
+
   @override
-  State createState() => _ScreenState();
+  State createState() => _WebScreenState();
 }
 
-class _ScreenState extends State<Screen> {
+class _WebScreenState extends State<WebScreen> {
   Widget build(BuildContext context) {
     Key _drawerKey = new GlobalKey();
     MediaQueryData queryData = MediaQuery.of(context);
@@ -17,18 +20,19 @@ class _ScreenState extends State<Screen> {
     double screenHeight = queryData.size.height - kToolbarHeight;
     return Scaffold(
       key: _drawerKey,
-
-      body: Center(
-          child: SingleChildScrollView(
-              child: Column(
-        children: [
-          buildAppBar("Issue Page", context, _drawerKey),
-          TabBarScreen(),
-          buildFooter()
-        ],
-      ))),
-
-      // appBar: buildAppBar("Issue Page", context, _drawerKey),
+      drawer: buildDrawers(context),
+      body: SizedBox(
+          width: screenWidth,
+          height: screenHeight,
+          child: Center(
+              child: SingleChildScrollView(
+                  child: Column(
+            children: [
+              buildAppBar("Issue Page", context, _drawerKey),
+              widget.screenBody,
+              buildFooter()
+            ],
+          )))),
       // body: Center(
       //     child: SingleChildScrollView(
       //         child: Column(children: [
@@ -38,7 +42,6 @@ class _ScreenState extends State<Screen> {
       //   //child: buildIssue(screenWidth, screenHeight, sampleIssue))
       //   buildFooter()
       // ]))),
-      drawer: buildDrawers(context),
     );
   }
 }

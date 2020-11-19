@@ -1,6 +1,10 @@
 import 'package:accountability/screens/issue_page_skeleton.dart';
+import 'package:accountability/screens/my_followed_pages_screen.dart';
 import 'package:accountability/screens/my_organizations_screen.dart';
 import 'package:accountability/screens/profile_screen.dart';
+import 'package:accountability/screens/screen_builder.dart';
+import 'package:accountability/web_app/web_screens/home_screen.dart';
+import 'package:accountability/web_app/web_screens/web_screen_test.dart';
 
 import 'screens/dashboard_screen.dart';
 import 'screens/home_screen.dart';
@@ -9,7 +13,7 @@ import 'screens/browse_issues_screen.dart';
 import 'screens/browse_politicians_screen.dart';
 import 'screens/search_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/my_politicians_screen.dart';
+import 'screens/my_leaders_screen.dart';
 
 const String HomeScreenRoute = '/';
 const String ProfileScreenRoute = '/profile';
@@ -18,8 +22,10 @@ const String BrowseIssuesScreenRoute = '/browse_issues';
 const String BrowsePoliticiansScreenRoute = '/browse_politicians';
 const String SearchPageRoute = '/search';
 const String IssueScreenRoute = '/issues';
-const String MyPoliticiansScreenRoute = '/my_politicians';
+const String MyLeadersScreenRoute = '/my_politicians';
 const String MyOrganizationsScreenRoute = '/my_organizations';
+const String MyFollowedPagesScreenRoute = '/my_followed_pages';
+const String ScreenBuilderRoute = '/screen_builder';
 
 class ExMaterialPageRoute<T> extends MaterialPageRoute<T> {
   ExMaterialPageRoute({
@@ -43,25 +49,42 @@ class ExMaterialPageRoute<T> extends MaterialPageRoute<T> {
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => HomeScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => HomeScreen(), settings: settings);
     case DashboardScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => DashboardScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => DashboardScreen(), settings: settings);
     case ProfileScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => ProfileScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => Screen(), settings: settings);
     case BrowseIssuesScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => BrowseIssuesScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => BrowseIssuesScreen(), settings: settings);
     case BrowsePoliticiansScreenRoute:
       return ExMaterialPageRoute(
-          builder: (context) => BrowsePoliticiansScreen());
+          builder: (context) => //BrowsePoliticiansScreen()
+              TestScreen(),
+          settings: settings);
     case SearchPageRoute:
-      return ExMaterialPageRoute(builder: (context) => SearchScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => SearchScreen(), settings: settings);
     case IssueScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => IssueScreen());
-    case MyPoliticiansScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => MyPoliticiansScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => IssueScreen(), settings: settings);
+    case MyLeadersScreenRoute:
+      return ExMaterialPageRoute(
+          builder: (context) => MyLeadersScreen(), settings: settings);
     case MyOrganizationsScreenRoute:
-      return ExMaterialPageRoute(builder: (context) => MyOrganizationsScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => MyOrganizationsScreen(), settings: settings);
+    case MyFollowedPagesScreenRoute:
+      return ExMaterialPageRoute(
+          builder: (context) => MyFollowedPagesScreen(), settings: settings);
+    case ScreenBuilderRoute:
+      return ExMaterialPageRoute(
+          builder: (context) => Screen(), settings: settings);
     default:
-      return ExMaterialPageRoute(builder: (context) => HomeScreen());
+      return ExMaterialPageRoute(
+          builder: (context) => HomeScreen(), settings: settings);
   }
 }

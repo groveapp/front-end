@@ -40,3 +40,8 @@ purple: #a6a6ff
 teal: 02EEE6, 52B6C, 216060
 blue: 4D82AF
 */
+
+//Current questions: 1) Add data on the search result cards?
+//Scrollable appbar or no?
+//Drawer or tabs?
+//combatting viewpoints based on fake news?

@@ -129,7 +129,7 @@ Widget _buildColumns(context) {
                                   onPressed: () {
                                     Navigator.pushNamed(
                                       context,
-                                      MyPoliticiansScreenRoute,
+                                      MyLeadersScreenRoute,
                                     );
                                   }))
                         ],
@@ -148,8 +148,12 @@ Widget _buildColumns(context) {
                         children: [
                           ListTile(
                               leading: CircleAvatar(
-                                  backgroundImage: FileImage(
-                                      File('assets/barack-obama-main.jpg'))),
+                                  backgroundImage: NetworkImage(
+                                      "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/54cb2a3b-6e2f-44da-88c6-7aa4700ae50e/air-vapormax-2020-fk-mens-shoe-kn9vwZ.jpg")
+
+                                  //FileImage(File(
+                                  //'assets/images/barack-obama-main.jpg'))
+                                  ),
                               title: Text("Federal Government"),
                               subtitle: Text("United States of America")),
                           ListTile(
@@ -161,7 +165,13 @@ Widget _buildColumns(context) {
                                   Text("University of Southern California")),
                           Container(
                               child: TextButton(
-                                  child: Text("View More"), onPressed: () {}))
+                                  child: Text("View More"),
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      MyOrganizationsScreenRoute,
+                                    );
+                                  }))
                         ],
                       ))
                     ],
@@ -189,7 +199,13 @@ Widget _buildColumns(context) {
                               subtitle: Text("City of Los Angeles")),
                           Container(
                               child: TextButton(
-                                  child: Text("View More"), onPressed: () {}))
+                                  child: Text("View More"),
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      MyFollowedPagesScreenRoute,
+                                    );
+                                  }))
                         ],
                       ))
                     ],
