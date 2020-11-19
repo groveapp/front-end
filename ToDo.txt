@@ -1,12 +1,9 @@
-First Up: Finish Viewpoint Card, Create Issue Card
-
-
 Main:
 - Add themes and styles and color schemes
 AppBar:
  - Fix search
  - Fix sign in/sign up dialogs
- - Add a signed in key
+ - Add a signed in key, backend
  - Fix logo button
  - Remove TextButton splash
  Drawer:
@@ -27,6 +24,7 @@ Add Other Screens
 - Browse Organizations
 - Browse Issues and Leaders Within an Organization
 - Messages
+- Trending
 - Tutorial
 - Organization sending links and ways to verify users (by address, email address, etc)
 - Sharing links/emails
