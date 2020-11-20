@@ -15,6 +15,7 @@ AppBar:
  - Write description
 Add Other Screens
 
+- Fix Web Screen Logic
 - Map function
 - Search
 - Politician Page
