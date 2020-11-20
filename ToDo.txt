@@ -41,3 +41,5 @@ Add Other Screens
 - Community policy
 
 - Backend
+- Ballot initiatives
+- boycott/strikes tool
