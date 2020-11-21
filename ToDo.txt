@@ -39,6 +39,7 @@ Add Other Screens
 - Expert designation
 - Moderation
 - Community policy
+- Reply and edit viewpoints
 
 - Backend
 - Ballot initiatives
