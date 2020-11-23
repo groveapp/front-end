@@ -31,7 +31,18 @@ Widget signUpDialog() {
         ),
         TextFormField(
           decoration: InputDecoration(
-            labelText: 'Address',
+            labelText: 'Email Address',
+            suffixIcon: Icon(
+              Icons.check_circle,
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF6200EE)),
+            ),
+          ),
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            labelText: 'Email Address',
             suffixIcon: Icon(
               Icons.check_circle,
             ),

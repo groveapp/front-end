@@ -1,20 +1,13 @@
+import 'package:accountability/web_app/web_screen_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:accountability/components/screen_components/app_bar.dart';
-import 'package:accountability/components/screen_components/left_drawer.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreenBody extends StatefulWidget {
   @override
-  State createState() => new _ProfileScreenState();
+  State createState() => new _ProfileScreenBodyState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenBodyState extends State<ProfileScreenBody> {
   Widget build(BuildContext context) {
-    Key _drawerKey = new GlobalKey();
-    return Scaffold(
-        key: _drawerKey,
-        appBar: buildAppBar("Profile", context, _drawerKey),
-        drawer: buildDrawers(context),
-        body: Center(
-            child: Text("Add demographics, address, organizations, etc.")));
+    return Text("Add demographics, address, organizations, etc.");
   }
 }

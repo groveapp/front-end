@@ -13,3 +13,20 @@ Widget buildFooter() {
       ),
       child: Expanded(child: Center(child: Text('Add Footer Here'))));
 }
+
+// Widget buildFooter() {
+//   return Expanded(
+//     child: Align(
+//       alignment: Alignment.bottomCenter,
+//       child: Container(
+//         width: double.infinity,
+//         color: Colors.red,
+//         padding: EdgeInsets.all(12.0),
+//         child: Text(
+//           'FOOTER',
+//           textAlign: TextAlign.center,
+//         ),
+//       ),
+//     ),
+//   );
+// }

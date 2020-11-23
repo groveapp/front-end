@@ -1,83 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:accountability/components/screen_components/app_bar.dart';
-import 'package:accountability/components/screen_components/left_drawer.dart';
 import 'package:accountability/components/sign_in_dialog.dart';
 import 'package:accountability/components/sign_up_dialog.dart';
-import 'package:accountability/components/screen_components/footer.dart';
+import 'package:accountability/web_app/web_screen_builder.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreenBody extends StatefulWidget {
   @override
-  State createState() => _HomeScreenState();
+  State createState() => _HomeScreenBodyState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenBodyState extends State<HomeScreenBody> {
   Widget build(BuildContext context) {
-    Key _drawerKey = GlobalKey();
-    final AlertDialog dialogSignUp = signUpDialog();
-    final AlertDialog dialogSignIn = signInDialog();
     MediaQueryData queryData = MediaQuery.of(context);
 
     double screenWidth = queryData.size.width;
     double screenHeight = queryData.size.height - kToolbarHeight;
 
-    return Scaffold(
-        key: _drawerKey,
-        appBar: buildAppBar("Home", context, _drawerKey),
-        drawer: buildDrawers(context),
-        bottomSheet: buildFooter(),
-        body: SizedBox(
-            width: screenWidth,
-            height: screenHeight,
-            child: Center(
-                child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-                    child: Column(children: [
-                      Container(
-                        clipBehavior: Clip.none,
-                        child: Column(
+    return _buildBody(screenWidth, screenHeight);
+  }
+
+  Widget _buildBody(screenWidth, screenHeight) {
+    final AlertDialog dialogSignUp = signUpDialog();
+    final AlertDialog dialogSignIn = signInDialog();
+    return SizedBox(
+        width: screenWidth,
+        height: screenHeight,
+        child: Center(
+            child: Container(
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                child: Column(children: [
+                  Container(
+                    clipBehavior: Clip.none,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          title: const Text('Welcome to The Accountability App',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 30)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            "A place where you can add your voice to tell your leaders what you think.",
+                            style: TextStyle(color: Colors.grey, fontSize: 20),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                        ButtonBar(
+                          alignment: MainAxisAlignment.center,
                           children: [
-                            ListTile(
-                              title: const Text(
-                                  'Welcome to The Accountability App',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 30)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Text(
-                                "A place where you can add your voice to tell your leaders what you think.",
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 20),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                            ButtonBar(
-                              alignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showDialog<void>(
-                                          context: context,
-                                          builder: (context) => dialogSignIn);
-                                    },
-                                    child: Text("Sign In")),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showDialog<void>(
-                                          context: context,
-                                          builder: (context) => dialogSignUp);
-                                    },
-                                    child: Text("Sign Up")),
-                              ],
-                            ),
+                            ElevatedButton(
+                                onPressed: () {
+                                  showDialog<void>(
+                                      context: context,
+                                      builder: (context) => dialogSignIn);
+                                },
+                                child: Text("Sign In")),
+                            ElevatedButton(
+                                onPressed: () {
+                                  showDialog<void>(
+                                      context: context,
+                                      builder: (context) => dialogSignUp);
+                                },
+                                child: Text("Sign Up")),
                           ],
                         ),
-                      ),
-                      issueList()
-                    ])))));
+                      ],
+                    ),
+                  ),
+                  issueList()
+                ]))));
   }
 }
-
 //This section will just pull issues from the trending issues in the area of the user's IP address, and will display the viewpoints and politicians in a compressed way
 
 Widget issueList() {

@@ -1,3 +1,6 @@
+import 'package:accountability/components/add_viewpoint_button.dart';
+import 'package:flutter/material.dart';
+
 class PageSummaryData {
   String pageName;
   String subtitle1;
@@ -71,3 +74,46 @@ class IssueSummaryData extends PageSummaryData {
           data2: "$numViewpoints Viewpoints",
         );
 }
+
+class PageFullData {
+  String pageType;
+  PageSummaryData pageSummaryData;
+  Widget summaryText;
+  ElevatedButton button1;
+  ElevatedButton button2;
+  Widget button3;
+  //Widget pageBody;
+
+  PageFullData({
+    this.pageType,
+    this.pageSummaryData,
+    this.summaryText,
+    this.button1,
+    this.button2,
+    this.button3,
+    //this.pageBody
+  });
+}
+
+class IssueData extends PageFullData {
+  IssueData(
+    IssueSummaryData issueSummaryData,
+    Widget issueSummaryText,
+    //add more data points here
+  ) : super(
+            pageType: "issue",
+            pageSummaryData: issueSummaryData,
+            summaryText: issueSummaryText,
+            button3: AddViewpointButton()
+            // button1: ,
+            // button2: ,
+            // button3: ,
+            // pageBody: ,
+            );
+}
+
+// class UserData {
+//   String firstName;
+//   String lastName;
+//   String
+// }

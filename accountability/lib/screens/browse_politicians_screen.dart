@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:accountability/components/screen_components/app_bar.dart';
-import 'package:accountability/components/screen_components/left_drawer.dart';
+import 'package:accountability/web_app/web_screen_builder.dart';
 
-class BrowsePoliticiansScreen extends StatelessWidget {
+class BrowsePoliticiansScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Key _drawerKey = new GlobalKey();
-    return Scaffold(
-      key: _drawerKey,
-      appBar: buildAppBar("Browse Politicians", context, _drawerKey),
-      body: _buildBody(),
-      drawer: buildDrawers(context),
-    );
+    return _buildBody();
   }
 }
 

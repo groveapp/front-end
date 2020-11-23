@@ -1,20 +1,22 @@
+import 'package:accountability/styles.dart';
+
 import 'data_structures.dart';
+import 'package:flutter/material.dart';
+// class IssueData {
+//   String title;
+//   String organizationLevel;
+//   String summary;
+//   int numResponses;
+//   int numExpertResponses;
+//   int popularityRank;
+//   String image;
 
-class IssueData {
-  String title;
-  String organizationLevel;
-  String summary;
-  int numResponses;
-  int numExpertResponses;
-  int popularityRank;
-  String image;
+//   IssueData(this.title, this.organizationLevel, this.summary, this.numResponses,
+//       this.numExpertResponses, this.popularityRank, this.image);
+// }
 
-  IssueData(this.title, this.organizationLevel, this.summary, this.numResponses,
-      this.numExpertResponses, this.popularityRank, this.image);
-}
-
-var sampleIssue = IssueData("Issue Title", "City of Los Angeles",
-    "This is an issue summary.", 54, 79, 5, "images/barack-obama-main.jpg");
+// var sampleIssue = IssueData("Issue Title", "City of Los Angeles",
+//     "This is an issue summary.", 54, 79, 5, "images/barack-obama-main.jpg");
 
 class ViewpointData {
   String title;
@@ -124,3 +126,6 @@ var sampleOrganizationPage = OrganizationSummaryData("Federal Government",
 
 var sampleIssuePage = IssueSummaryData(
     "Sidewalk Repair", "City of Pittsburgh", "United States", 33, 33);
+
+var sampleIssue = IssueData(sampleIssuePage,
+    SelectableText("This is the issue summary", style: subtitle1()));

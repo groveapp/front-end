@@ -1,20 +1,15 @@
-import 'package:accountability/web_app/web_screen_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:accountability/styles.dart';
 import 'dart:io';
 import 'package:accountability/routes.dart';
 
-class DashboardScreenBody extends StatefulWidget {
+class DashboardScreenWeb extends StatefulWidget {
   @override
-  State createState() => new _DashboardScreenBodyState();
+  State createState() => new _DashboardScreenWebState();
 }
 
-class _DashboardScreenBodyState extends State<DashboardScreenBody> {
+class _DashboardScreenWebState extends State<DashboardScreenWeb> {
   Widget build(BuildContext context) {
-    return _buildBody();
-  }
-
-  Widget _buildBody() {
     return Center(
         child: Row(children: [
       Expanded(
@@ -24,12 +19,12 @@ class _DashboardScreenBodyState extends State<DashboardScreenBody> {
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("New Activity",
                       style: title2(), textAlign: TextAlign.left),
                   Container(
-                      padding: EdgeInsets.symmetric(vertical: 0, horizontal: 8),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,6 +200,9 @@ class _DashboardScreenBodyState extends State<DashboardScreenBody> {
     ]));
   }
 }
+
+Widget _buildColumns(context) {}
+
 // Widget _buildColumns() {
 //   return SingleChildScrollView(
 //     child: Container(

@@ -1,37 +1,21 @@
-import 'package:accountability/components/screen_components/app_bar.dart';
-import 'package:accountability/components/screen_components/left_drawer.dart';
-import 'package:accountability/styles.dart';
-import 'dart:io';
-import 'package:accountability/routes.dart';
 import 'package:accountability/util/sample_data.dart';
 import 'package:flutter/material.dart';
+import 'package:accountability/web_app/web_screen_builder.dart';
 
-class SearchScreen extends StatefulWidget {
+class SearchScreenBody extends StatefulWidget {
   @override
-  _SearchScreenState createState() => _SearchScreenState();
+  State createState() => _SearchScreenBodyState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _SearchScreenBodyState extends State<SearchScreenBody> {
   Widget build(BuildContext context) {
-    Key _drawerKey = new GlobalKey();
     MediaQueryData queryData = MediaQuery.of(context);
     double screenWidth = queryData.size.width;
     double screenHeight = queryData.size.height - kToolbarHeight;
 
-    //final QueryArgs queryArgs = ModalRoute.of(context).settings.arguments;
-    //print(queryArgs.query);
     final String query = ModalRoute.of(context).settings.arguments;
-    print(query);
 
-    return Scaffold(
-      key: _drawerKey,
-      appBar: buildAppBar("Search", context, _drawerKey),
-      body: SizedBox(
-          width: screenWidth,
-          height: screenHeight,
-          child: _buildBody(context, query, screenWidth)),
-      drawer: buildDrawers(context),
-    );
+    return _buildBody(query, screenWidth, screenHeight);
   }
 }
 
@@ -39,11 +23,12 @@ class _SearchScreenState extends State<SearchScreen> {
 //   return Center(child: Text('$query'));
 // }
 
-Widget _buildBody(context, query, screenWidth) {
+Widget _buildBody(query, screenWidth, screenHeight) {
   var numColumns = screenWidth ~/ (400 + 32);
 
   return SizedBox(
       width: screenWidth,
+      height: screenHeight,
       child: Center(
           child: Expanded(
               child: DefaultTabController(
@@ -116,6 +101,13 @@ Widget _searchResultsList(type, numColumns) {
                 crossAxisCount: numColumns,
                 mainAxisSpacing: 0,
                 children: [
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
+                  _searchResultItem(sampleSearchResult),
                   _searchResultItem(sampleSearchResult),
                 ]),
           )

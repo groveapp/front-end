@@ -1,27 +1,20 @@
 import 'package:accountability/styles.dart';
 import 'package:accountability/util/sample_data.dart';
+import 'package:accountability/web_app/web_screen_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:accountability/components/screen_components/app_bar.dart';
-import 'package:accountability/components/screen_components/left_drawer.dart';
 import 'package:accountability/components/page_summary_card.dart';
 
-class MyFollowedPagesScreen extends StatelessWidget {
+class MyFollowedPagesScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
-    Key _drawerKey = new GlobalKey();
     MediaQueryData queryData = MediaQuery.of(context);
     double screenWidth = queryData.size.width;
     double screenHeight = queryData.size.height - kToolbarHeight;
-    return Scaffold(
-      key: _drawerKey,
-      appBar: buildAppBar("Dashboard", context, _drawerKey),
-      body: _buildBody(screenWidth, screenHeight),
-      drawer: buildDrawers(context),
-    );
+    var numColumns = screenWidth ~/ (400 + 32);
+    return _buildBody(numColumns);
   }
 }
 
-Widget _buildBody(screenWidth, screenHeight) {
-  var numColumns = screenWidth ~/ (400 + 32);
+Widget _buildBody(numColumns) {
   return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Column(

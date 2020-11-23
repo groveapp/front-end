@@ -1,3 +1,4 @@
+import 'package:accountability/components/issue_card_components/issue_card2.dart';
 import 'package:accountability/components/screen_components/app_bar.dart';
 import 'package:accountability/components/screen_components/left_drawer.dart';
 //import 'package:accountability/components/viewpoint_scroller.dart';
@@ -25,7 +26,12 @@ class _IssueScreenState extends State<IssueScreen> {
               child: Column(children: [
         Transform(
             transform: Matrix4.identity()..scale(1),
-            child: buildIssue(screenWidth, screenHeight, sampleIssue)),
+            child: buildIssue2(
+              screenWidth,
+              screenHeight,
+              sampleIssue,
+              context,
+            )),
         buildFooter()
       ]))),
       drawer: buildDrawers(context),

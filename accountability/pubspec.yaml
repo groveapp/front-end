@@ -35,6 +35,10 @@ dependencies:
 
   scroll_snap_list: ^0.5.1
 
+  flutter_markdown: ^0.5.1
+
+  zefyr: ^1.0.0-dev.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

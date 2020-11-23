@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:accountability/components/screen_components/app_bar.dart';
 import 'package:accountability/components/screen_components/left_drawer.dart';
 import 'package:accountability/components/screen_components/footer.dart';
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
 class WebScreen extends StatefulWidget {
   final Widget screenBody;
@@ -13,6 +14,7 @@ class WebScreen extends StatefulWidget {
 }
 
 class _WebScreenState extends State<WebScreen> {
+  @override
   Widget build(BuildContext context) {
     Key _drawerKey = new GlobalKey();
     MediaQueryData queryData = MediaQuery.of(context);
@@ -24,15 +26,21 @@ class _WebScreenState extends State<WebScreen> {
       body: SizedBox(
           width: screenWidth,
           height: screenHeight,
-          child: Center(
-              child: SingleChildScrollView(
+          child: //Center(
+              //child:
+              SingleChildScrollView(
                   child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              buildAppBar("Issue Page", context, _drawerKey),
-              widget.screenBody,
+              Column(children: [
+                buildAppBar("Issue Page", context, _drawerKey),
+                widget.screenBody,
+              ]),
               buildFooter()
             ],
-          )))),
+          )))
+      //)
+      ,
       // body: Center(
       //     child: SingleChildScrollView(
       //         child: Column(children: [

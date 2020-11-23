@@ -13,7 +13,7 @@ Widget buildChart() {
 
 Widget buildChartArea() {
   return Column(children: [
-    Container(child: SelectableText("Data", style: TextStyle(fontSize: 36))),
+    //Container(child: SelectableText("Data", style: TextStyle(fontSize: 36))),
     Container(
       child: SizedBox(
         height: 500,

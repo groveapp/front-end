@@ -52,18 +52,20 @@ Widget buildAppBar(String title, BuildContext context, _drawerKey) {
               },
               child: Text('Trending'))),
       SizedBox(width: 200, height: 40, child: SearchBar()),
-      ElevatedButton(
-          onPressed: () {
-            showDialog<void>(
-                context: context, builder: (context) => dialogSignIn);
-          },
-          child: Text("Sign In")),
-      ElevatedButton(
-          onPressed: () {
-            showDialog<void>(
-                context: context, builder: (context) => dialogSignUp);
-          },
-          child: Text("Sign Up"))
+      ButtonBar(children: [
+        ElevatedButton(
+            onPressed: () {
+              showDialog<void>(
+                  context: context, builder: (context) => dialogSignIn);
+            },
+            child: Text("Sign In")),
+        ElevatedButton(
+            onPressed: () {
+              showDialog<void>(
+                  context: context, builder: (context) => dialogSignUp);
+            },
+            child: Text("Sign Up"))
+      ])
     ],
   );
 }
