@@ -12,6 +12,8 @@ import 'package:accountability/components/issue_card_components/viewpoint_list2.
 import 'package:flutter/rendering.dart';
 import 'package:accountability/util/data_structures.dart';
 import 'package:accountability/components/page_components/issue_page_body.dart';
+import 'package:accountability/components/page_components/organization_page_body.dart';
+import 'package:accountability/components/page_components/leader_page_body.dart';
 
 //FIX THE SCROLL VIEW AND HEIGHT AND WIDTH AND SCREEN_
 //Fix summary text
@@ -119,8 +121,9 @@ Widget buildFullCard(PageFullData page, screenWidth, screenHeight) {
                                 //   child: ElevatedButton(
                                 //       child: Text("Button 3"), onPressed: () {}),
                                 //)
-                                // Container(
-                                //     padding: EdgeInsets.all(4), child: page.button3)
+                                Container(
+                                    padding: EdgeInsets.all(4),
+                                    child: page.button3)
                               ]))
                         ]),
                     Container(
@@ -159,14 +162,14 @@ buildOrganizationPageBody(page) {
   return OrganizationPageBody(page);
 }
 
-class LeaderPageBody {
-  PageFullData page;
-  @override
-  LeaderPageBody(this.page);
-}
+// class LeaderPageBody {
+//   PageFullData page;
+//   @override
+//   LeaderPageBody(this.page);
+// }
 
-class OrganizationPageBody {
-  PageFullData page;
-  @override
-  OrganizationPageBody(this.page);
-}
+// class OrganizationPageBody {
+//   PageFullData page;
+//   @override
+//   OrganizationPageBody(this.page);
+// }

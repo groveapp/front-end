@@ -48,5 +48,5 @@ Widget _buildBody(numColumns) {
 }
 
 Widget _followedPage(page) {
-  return buildSummaryCard(page);
+  return PageSummaryCard(page);
 }

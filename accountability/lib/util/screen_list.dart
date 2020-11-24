@@ -9,7 +9,7 @@ import 'package:accountability/screens/my_leaders_screen.dart';
 import 'package:accountability/screens/my_organizations_screen.dart';
 import 'package:accountability/screens/profile_screen.dart';
 import 'package:accountability/screens/search_screen.dart';
-import 'package:accountability/screens/screen_builder.dart';
+import 'package:accountability/screens/useless/screen_builder.dart';
 import 'package:accountability/util/sample_data.dart';
 import 'package:accountability/web_app/web_screen_builder.dart';
 import 'package:accountability/components/screen_components/tab_bar_web.dart';
@@ -90,5 +90,17 @@ class Screen extends StatelessWidget {
 class IssueScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return WebScreen(FullCard(sampleIssue));
+  }
+}
+
+class OrganizationScreen extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return WebScreen(FullCard(sampleOrganization));
+  }
+}
+
+class LeaderScreen extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return WebScreen(FullCard(sampleLeader));
   }
 }

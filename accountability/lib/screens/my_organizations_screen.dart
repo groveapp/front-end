@@ -52,5 +52,5 @@ Widget _buildBody(screenWidth, screenHeight) {
 }
 
 Widget _myOrganizations(organization) {
-  return buildSummaryCard(organization);
+  return PageSummaryCard(organization);
 }

@@ -1,7 +1,19 @@
 import 'package:accountability/styles.dart';
+import 'package:accountability/util/data_structures.dart';
 import 'package:flutter/material.dart';
+import 'package:accountability/routes.dart';
 
-Widget buildSummaryCard(page) {
+class PageSummaryCard extends StatelessWidget {
+  final PageSummaryData page;
+  @override
+  PageSummaryCard(this.page);
+  @override
+  Widget build(BuildContext context) {
+    return buildSummaryCard(page, context);
+  }
+}
+
+Widget buildSummaryCard(page, context) {
   return Center(
       child: Container(
           padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
@@ -67,7 +79,9 @@ Widget buildSummaryCard(page) {
                     ]),
                 TextButton(
                     child: Text("View More", style: TextStyle(fontSize: 16)),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.pushNamed(context, IssueScreenRoute);
+                    })
               ],
             )),
           )));

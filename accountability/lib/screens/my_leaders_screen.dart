@@ -53,5 +53,5 @@ Widget _buildBody(screenWidth, screenHeight) {
 }
 
 Widget _myLeaders(leader) {
-  return buildSummaryCard(leader);
+  return PageSummaryCard(leader);
 }

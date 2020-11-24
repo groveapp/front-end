@@ -2,7 +2,7 @@
 import 'package:accountability/screens/my_followed_pages_screen.dart';
 import 'package:accountability/screens/my_organizations_screen.dart';
 import 'package:accountability/screens/profile_screen.dart';
-import 'package:accountability/screens/screen_builder.dart';
+import 'package:accountability/screens/useless/screen_builder.dart';
 import 'package:accountability/web_app/web_screens/home_screen_web.dart';
 import 'package:accountability/web_app/web_screens/web_screen_test.dart';
 
