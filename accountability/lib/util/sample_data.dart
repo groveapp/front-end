@@ -1,6 +1,6 @@
-import 'package:accountability/styles.dart';
+import 'package:accountability/ui/styles.dart';
 
-import 'data_structures.dart';
+import '../logic/internal_classes/data_structures.dart';
 import 'package:flutter/material.dart';
 // class IssueData {
 //   String title;
@@ -125,7 +125,12 @@ var sampleOrganizationPage = OrganizationSummaryData("Federal Government",
     "United States", 53, 33, 'images/barack-obama-main.jpg');
 
 var sampleIssuePage = IssueSummaryData(
-    "Sidewalk Repair", "City of Pittsburgh", "United States", 33, 33);
+  "Sidewalk Repair",
+  "City of Pittsburgh",
+  "United States",
+  33,
+  33,
+);
 
 var sampleIssue = IssueData(sampleIssuePage,
     SelectableText("This is the issue summary", style: subtitle1()));
@@ -135,3 +140,7 @@ var sampleLeader = LeaderData(sampleLeaderPage,
 
 var sampleOrganization = OrganizationData(sampleOrganizationPage,
     SelectableText("This is the organization summary", style: subtitle1()));
+
+var loaderData = sampleOrganization;
+
+var summaryLoaderData = sampleOrganizationPage;

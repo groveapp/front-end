@@ -39,6 +39,12 @@ dependencies:
 
   zefyr: ^1.0.0-dev.2.0
 
+  flutter_web_scrollbar: ^0.0.3
+
+  dartz: ^0.8.9
+
+  http: ^0.12.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
