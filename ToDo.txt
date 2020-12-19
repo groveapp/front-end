@@ -44,3 +44,8 @@ Add Other Screens
 - Backend
 - Ballot initiatives
 - boycott/strikes tool
+
+Backend services:
+Angel Dart
+GraphQL
+MongoDB
