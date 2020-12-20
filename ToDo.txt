@@ -1,9 +1,9 @@
 Main:
-- Add themes and styles and color schemes
+- Add themes, styles, and color schemes
 AppBar:
- - Fix search
- - Fix sign in/sign up dialogs
- - Add a signed in key, backend
+ - Fix the searchbar
+ - Make the sign in/sign up dialogs functional
+ - Add a signed-in key
  - Fix logo button
  - Remove TextButton splash
  Drawer:
@@ -12,13 +12,11 @@ AppBar:
  - Replace routes with links
  Home:
  - Create list of trending issue cards
- - Write description
-Add Other Screens
+ - Write description of site
 
-- Fix Web Screen Logic
 - Map function
 - Search
-- Politician Page
+- Leader Page
 - Organization Page
 - Browse Issues
 - Browse Politicians
