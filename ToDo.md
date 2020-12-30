@@ -42,6 +42,7 @@ AppBar:
 - Backend
 - Ballot initiatives
 - boycott/strikes tool
+- internal/external pages
 
 Backend services:
 Angel Dart
