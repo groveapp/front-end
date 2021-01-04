@@ -43,6 +43,7 @@ AppBar:
 - Ballot initiatives
 - boycott/strikes tool
 - internal/external pages
+- potential addition: place for scientists to determine what their best understanding of the world is (best economic policies for different countries, best understanding of physics, best knowledge of psychology)
 
 Backend services:
 Angel Dart
