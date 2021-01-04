@@ -1,3 +1,11 @@
 # accountability
 
-We can break this app down by looking at organizations. Each organization (whether it be the US Federal Government, your City Council, a Student Government, a club, an advocacy group, or even a private company) can have an internal and an external side. On the internal side, the users are the employees or members of the organization, and on the external side, the users are the public (or a subset of the public selected by the organization). For both sides, the main content will be in the form of issue pages. On issue pages (which can be added top-down by the organization leaders or botton-up by its members), the community will be able to add their viewpoints on the issue.
+This is the GitHub repository for Grove, an endeavor to build a tool where citizens and our leaders can learn about each others’ thoughts and actions, forge new movements, and share ideas with the common goal of building a better future.
+
+More often than not, leaders and the people they represent are talking past each other. We want to realign our institutions with the public by adding citizens back into the decision-making process.
+
+You can read more about our project [here](https://drive.google.com/file/d/1spyZwB-DbDNKNlOtm2hAkvy6j5_Tgs4a/view?usp=sharing). 
+
+If you have any questions, ideas, suggestions, or feedback, we'd love to hear from you! You can email aman.patel@usc.edu with your questions or comments. All thoughts are appreciated, and we'd be happy to answer any questions you might have.
+
+We're also looking for more people to help out with this project. If you're interested, email aman.patel@usc.edu, and we'll find a place for you to help out!
