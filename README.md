@@ -1,4 +1,4 @@
-# accountability
+# Grove
 
 This is the GitHub repository for Grove, an endeavor to build a tool where citizens and our leaders can learn about each others’ thoughts and actions, forge new movements, and share ideas with the common goal of building a better future.
 
