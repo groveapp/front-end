@@ -9,3 +9,5 @@ You can read more about our project [here](https://drive.google.com/file/d/1spyZ
 If you have any questions, ideas, suggestions, or feedback, we'd love to hear from you! You can email aman.patel@usc.edu with your questions or comments. All thoughts are appreciated, and we'd be happy to answer any questions you might have.
 
 We're also looking for more people to help out with this project. If you're interested, email aman.patel@usc.edu, and we'll find a place for you to help out!
+
+Figma Page: https://www.figma.com/files/project/21706901/Grove-Page-Wireframes
