@@ -33,6 +33,30 @@ Most of the ui widgets are found here.
 
 Holds reusable components, like summary cards, full cards, buttons, dialogs, and screen parts.
 
+#### /mobile_app
+
+If we use this same codebase for mobile, the mobile-specific screen layouts would be defined here.
+
+#### /screens
+
+Where individual screens are built.
+
+#### /web_app
+
+Takes care of web routing and tacking the global screen components (like the AppBar and footer) onto each screen.
+
+#### main.dart
+
+The main method called when the app starts.
+
+#### screen_list.dart
+
+Turns each screen body into a web screen, as specified in /web_app.
+
+#### styles.dart
+
+Global fonts, colors, shapes, etc. *Needs to be utilized eventually.*
+
 A new Flutter project.
 
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
