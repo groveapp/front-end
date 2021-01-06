@@ -31,7 +31,7 @@ Most of the ui widgets are found here.
 
 #### /components
 
-Holds reusable components, like summary cards, full cards, buttons, dialogs, and screen parts.
+Holds reusable components, like summary cards, full cards, buttons, dialogs, and screen parts. If you navigate to the folder, there's another readme with more info about what each file does.
 
 #### /mobile_app
 
