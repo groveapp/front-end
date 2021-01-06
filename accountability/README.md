@@ -57,6 +57,28 @@ Turns each screen body into a web screen, as specified in /web_app.
 
 Global fonts, colors, shapes, etc. *Needs to be utilized eventually.*
 
+### /util
+
+Contains sample data to be used when building new components, as well as non-functional scrollbar (since Flutter Web doesn't have a built-in scrollbar yet).
+
+### routes.dart
+
+Specifies the routes that the Navigator uses to push and pop pages off of the stack.
+
+### routing_data.dart
+
+This is supposed to be used for giving each issue page a unique URL, but it's non-functional currently.
+
+### size_helper.dar
+
+A placeholder file for when the mobile app comes in, to query the device screen size and adjust the layout style accordingly.
+
+### string_extensions.dart
+
+To be used with routing_data.dart, also non-functional.
+
+
+
 A new Flutter project.
 
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
