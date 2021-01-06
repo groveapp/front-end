@@ -15,3 +15,5 @@ Figma: https://www.figma.com/files/project/21706901/Grove-Page-Wireframes
 Slack: https://join.slack.com/t/groveanaccoun-hnm5149/shared_invite/zt-kiajatiu-mqPHPmClMFwMa36jdSWGDg
 
 Look at ToDo.md for a running list of tasks to complete.
+
+To get a sense for how users will be shifting between different pages, check out [this flowchart](https://drive.google.com/file/d/1IOsTro1-P_cwLe3P96mSh0fkxO-oJRTk/view?usp=sharing)
