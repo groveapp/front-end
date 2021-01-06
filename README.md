@@ -13,3 +13,5 @@ We're also looking for more people to help out with this project. If you're inte
 Figma: https://www.figma.com/files/project/21706901/Grove-Page-Wireframes
 
 Slack: https://join.slack.com/t/groveanaccoun-hnm5149/shared_invite/zt-kiajatiu-mqPHPmClMFwMa36jdSWGDg
+
+Look at ToDo.md for a running list of tasks to complete.
