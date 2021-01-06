@@ -5,7 +5,7 @@ Here's a description of the relevant files and folders. Everything else is mostl
 
 ## pubspec.yaml
 
-This file contains this project's dependencies. To use a public package (like those available on [pub.dev](https://pub.dev)), add "package_name: ^(version number)" under "dependencies," then run flutter pub get (or just Ctrl+S in Visual Studio).
+This file contains this project's dependencies. To use a public package (like those available on [pub.dev](https://pub.dev)), add `package_name: ^(version number)` under `dependencies`, then run `flutter pub get` (or just `Ctrl+S` in Visual Studio).
 
 ## /assets
 
