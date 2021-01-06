@@ -11,4 +11,5 @@ If you have any questions, ideas, suggestions, or feedback, we'd love to hear fr
 We're also looking for more people to help out with this project. If you're interested, email aman.patel@usc.edu, and we'll find a place for you to help out!
 
 Figma: https://www.figma.com/files/project/21706901/Grove-Page-Wireframes
+
 Slack: https://join.slack.com/t/groveanaccoun-hnm5149/shared_invite/zt-kiajatiu-mqPHPmClMFwMa36jdSWGDg
