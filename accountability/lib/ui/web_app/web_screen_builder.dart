@@ -24,7 +24,7 @@ class _WebScreenState extends State<WebScreen> {
 
   void scrollBarCallBack(DragUpdateDetails dragUpdate) {
     setState(() {
-      _controller.position.moveTo(dragUpdate.globalPosition.dy * 1.1);
+      _controller.position.moveTo(dragUpdate.globalPosition.dy * 3.5);
     });
   }
 
@@ -72,7 +72,7 @@ class _WebScreenState extends State<WebScreen> {
               //   dragHandleHeight: 40.0,
               //   dragHandleWidth: 15.0,
               // ),
-              ScrollBar(scrollBarCallBack)
+              //ScrollBar(scrollBarCallBack)
             ]))); //)
     // body: Center(
     //     child: SingleChildScrollView(

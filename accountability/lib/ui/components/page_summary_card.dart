@@ -3,7 +3,7 @@ import 'package:accountability/logic/internal_classes/data_structures.dart';
 import 'package:accountability/util/sample_data.dart';
 import 'package:flutter/material.dart';
 import 'package:accountability/routes.dart';
-import 'page_full_card_async.dart';
+import 'package:accountability/async/page_full_card_async.dart';
 
 class PageSummaryCard extends StatelessWidget {
   final String pageID;

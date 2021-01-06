@@ -1,4 +1,4 @@
-import 'package:accountability/ui/components/page_full_card_async.dart';
+import 'package:accountability/async/page_full_card_async.dart';
 import 'package:accountability/ui/styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

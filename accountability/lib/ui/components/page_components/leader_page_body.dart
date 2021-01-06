@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:accountability/ui/components/page_full_card.dart';
 import 'package:accountability/logic/internal_classes/data_structures.dart';
-import 'package:accountability/ui/components/page_full_card_async.dart';
+import 'package:accountability/async/page_full_card_async.dart';
 
 class LeaderPageBody extends StatefulWidget {
   final PageFullData page;
