@@ -58,10 +58,13 @@ Less important tasks, for later on:
 - internal/external pages
 
 
-Potential backend services:
+Potential services to use:
+
 Angel Dart
+
 GraphQL
-MongoDB
+
+MongoDB or PostgreSQL
 
 Potential additions:
-- place for scientists to determine what their best understanding of the world is (best economic policies for different countries, best understanding of physics, best knowledge of psychology)
+- A place for scientists to collectively determine what their best understanding of the world is (e.g. best economic policies for different countries, best understanding of physics, best knowledge of psychology)
