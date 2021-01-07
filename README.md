@@ -16,4 +16,6 @@ Slack: https://join.slack.com/t/groveanaccoun-hnm5149/shared_invite/zt-kiajatiu-
 
 Look at ToDo.md for a running list of tasks to complete.
 
-To get a sense for how users will be shifting between different pages, check out [this flowchart](https://drive.google.com/file/d/1IOsTro1-P_cwLe3P96mSh0fkxO-oJRTk/view?usp=sharing)
+To get a sense for how users will be shifting between different pages, check out [this flowchart](https://drive.google.com/file/d/1IOsTro1-P_cwLe3P96mSh0fkxO-oJRTk/view?usp=sharing).
+
+A quick onboarding presentation can be found [here](https://docs.google.com/presentation/d/1bcXZVNuHf7iC3PyzaSYGzr3q6w6qmWS6g5SJCqwxz9k/edit?usp=sharing).
