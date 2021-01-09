@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "dart",
             "args": ["--verbose"],
-            "program": "lib/ui/main.dart"
+            "program": "lib/main.dart"
         }
     ]
 }
