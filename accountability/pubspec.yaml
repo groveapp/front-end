@@ -45,6 +45,8 @@ dependencies:
 
   http: ^0.12.2
 
+  password_hash: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
