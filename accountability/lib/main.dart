@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../routes.dart';
+import 'package:accountability/routes.dart';
 
 void main() => runApp(MyApp());
 
