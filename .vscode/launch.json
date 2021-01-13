@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "accountability",
+            "type": "pwa-chrome",
             "request": "launch",
-            "type": "dart",
-            "args": ["--verbose"],
-            "program": "lib/main.dart"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
