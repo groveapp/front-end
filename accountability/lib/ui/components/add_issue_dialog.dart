@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:quill_delta/quill_delta.dart';
-import 'package:zefyr/zefyr.dart';
+// import 'package:quill_delta/quill_delta.dart';
+//import 'package:zefyr/zefyr.dart';
 
 Widget addIssueDialog() {
   return AlertDialog(
@@ -50,18 +50,18 @@ class EditorPage extends StatefulWidget {
 
 class EditorPageState extends State<EditorPage> {
   /// Allows to control the editor and the document.
-  ZefyrController _controller;
+  //ZefyrController _controller;
 
   /// Zefyr editor like any other input field requires a focus node.
-  FocusNode _focusNode;
+  // FocusNode _focusNode;
 
   @override
   void initState() {
     super.initState();
     // Here we must load the document and pass it to Zefyr controller.
-    final document = _loadDocument();
-    _controller = ZefyrController(document);
-    _focusNode = FocusNode();
+    // final document = _loadDocument();
+    //_controller = ZefyrController(document);
+    // _focusNode = FocusNode();
   }
 
   @override
@@ -71,21 +71,21 @@ class EditorPageState extends State<EditorPage> {
     return Theme(
         data: ThemeData(hoverColor: Colors.grey, focusColor: Colors.grey),
         child: Column(children: [
-          ZefyrEditor(
-            padding: EdgeInsets.all(16),
-            controller: _controller,
-            focusNode: _focusNode,
-          ),
-          ZefyrToolbar.basic(controller: _controller)
+          // ZefyrEditor(
+          //   padding: EdgeInsets.all(16),
+          //   controller: _controller,
+          //   focusNode: _focusNode,
+          // ),
+          // ZefyrToolbar.basic(controller: _controller)
         ]));
   }
 
   /// Loads the document to be edited in Zefyr.
-  NotusDocument _loadDocument() {
-    // For simplicity we hardcode a simple document with one line of text
-    // saying "Zefyr Quick Start".
-    // (Note that delta must always end with newline.)
-    final Delta delta = Delta()..insert("Add your viewpoint summary here.\n");
-    return NotusDocument.fromDelta(delta);
-  }
+  // NotusDocument _loadDocument() {
+  // For simplicity we hardcode a simple document with one line of text
+  // saying "Zefyr Quick Start".
+  // (Note that delta must always end with newline.)
+  // final Delta delta = Delta()..insert("Add your viewpoint summary here.\n");
+  // return NotusDocument.fromDelta(delta);
+  // }
 }

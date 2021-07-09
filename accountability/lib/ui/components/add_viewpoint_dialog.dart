@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:quill_delta/quill_delta.dart';
-import 'package:zefyr/zefyr.dart';
+// import 'package:quill_delta/quill_delta.dart';
+// import 'package:zefyr/zefyr.dart';
 
 //include "save as draft"
 //no markdown needed initially

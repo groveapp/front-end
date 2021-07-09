@@ -50,18 +50,23 @@ class _WebScreenState extends State<WebScreen> {
               Container(
                   height: screenHeight,
                   width: screenWidth,
-                  child: SingleChildScrollView(
+                  child: Scrollbar(
+                      thickness: 15,
                       controller: _controller,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(children: [
-                            buildAppBar("Issue Page", context, _drawerKey),
-                            widget.screenBody,
-                          ]),
-                          buildFooter()
-                        ],
-                      ))),
+                      interactive: true,
+                      isAlwaysShown: true,
+                      child: SingleChildScrollView(
+                          controller: _controller,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(children: [
+                                buildAppBar("Issue Page", context, _drawerKey),
+                                widget.screenBody,
+                              ]),
+                              buildFooter()
+                            ],
+                          )))),
 
               // FlutterWebScroller(
               //   scrollBarCallBack,
