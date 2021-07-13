@@ -1,19 +1,43 @@
-
 full issue page UI
+welcome screen UI
+control text overflow behavior -- expandable text widget
+add leader page WITH APIs
+share bar for FB, email, Twitter, IG
+if user has voted, show them stats
+
+once backend done:
 
 issue list UI
-
 organization list UI
-
-welcome screen UI
-
-
 add issue list and other models/providers for other routes
-
-add listview builder for lists
-
-control text overflow behavior
-
 add authentication
+add additional fields for bills
+add viewpoint title column
+add leader json parser
+add things to user profile: follow pages list
+if logged in: add agreed viewpoints to page when loaded
+add dashboard
+add disagreed viewpoints list to issue page model, turn colors green and red
+tab bar at top of issue page showing charts/response vs. viewpoints
+add leader image, change name to one column, add leader title
+leader page
+twitter/facebook/email notification subscription
+mobile vs. desktop specific code: import dart:io show Platform
+share URL: import 'dart:html'; var url = window.location.href;
 
+
+
+APIs for leader info:
+https://medium.com/ndp-annotations/civic-and-political-apis-data-sets-and-websites-136fa63a0af1
+Maplight: paid civic tech APIs
+Census geocoding: https://www.census.gov/data/developers/data-sets/Geocoding-services.html
+Propublica congress api: https://www.propublica.org/datastore/api/propublica-congress-api
+OpenStates: https://docs.openstates.org/en/latest/api/
+VoteSmart: https://votesmart.org/share/api#.YOyR4uhKg2w
+OpenSecrets: https://www.opensecrets.org/open-data/api
+Federal Election Commission: https://api.open.fec.gov/developers/
+Socrata: https://socratadiscovery.docs.apiary.io/#reference/0/find-by-domain
+American Community Survey API: https://www.census.gov/data/developers/data-sets/acs-1year.html
+DemocracyWorks API: https://www.democracy.works/elections-api
+Google Civic Info: https://developers.google.com/civic-information
 

@@ -20,4 +20,10 @@ class ViewpointProvider {
         .map<Viewpoint>((json) => Viewpoint.fromJson(json))
         .toList();
   }
+
+  Future postViewpoint(Viewpoint viewpoint) async {
+    return await _helper.post('/viewpoint/', viewpoint).catchError((error) {
+      return "error";
+    });
+  }
 }

@@ -34,7 +34,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case IssuePageRoute:
       var id = int.tryParse(routingData['id']);
       return ExMaterialPageRoute(
-          builder: (context) => IssuePage(issueId: id), settings: settings);
+          builder: (context) => IssuePage(id), settings: settings);
     // case LeaderRoute:
     //   return ExMaterialPageRoute(
     //       builder: (context) => LeaderView(), settings: settings);

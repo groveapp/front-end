@@ -22,7 +22,7 @@ Widget buildNavBar(BuildContext context) {
           NavButton(
             text: "Issues",
             onPressed: () {
-              Beamer.of(context).beamToNamed('/issues/1');
+              Beamer.of(context).beamToNamed('/organizations');
             },
           ),
           NavButton(

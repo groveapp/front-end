@@ -132,6 +132,7 @@ class Card2 extends StatelessWidget {
                                           child: BodyPlain(text: issueSummary)),
                                     ]),
                                 Container(
+                                    alignment: Alignment.centerLeft,
                                     margin: EdgeInsets.symmetric(
                                         horizontal: 16, vertical: 8),
                                     child: BodyPlain(
@@ -182,7 +183,7 @@ class _ViewpointCardState extends State<ViewpointCard> {
               color: pageModel.agreedViewpoints.contains(widget.viewpointId)
                   ? Colors.black12
                   : null,
-              margin: EdgeInsets.symmetric(vertical: 16),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               child: SizedBox(
                   height: 100,
                   child: Column(

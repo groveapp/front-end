@@ -20,6 +20,20 @@ class ApiBaseHelper {
     return responseJson;
   }
 
+  Future<dynamic> post(String url, Object object) async {
+    print('Api Post, url $url');
+    var responseJson;
+    try {
+      final response = await http.post(Uri.parse(_baseUrl + url), body: object);
+      responseJson = _returnResponse(response);
+    } on SocketException {
+      print('No net');
+      throw FetchDataException('No Internet connection');
+    }
+    print('api post complete!');
+    return responseJson;
+  }
+
   dynamic _returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:

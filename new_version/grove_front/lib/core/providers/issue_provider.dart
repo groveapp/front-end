@@ -19,7 +19,12 @@ class IssueProvider {
   Future<List<Issue>> getIssuesByOrganization(int organizationId) async {
     final parsed =
         await _helper.get('/issue/organization/' + organizationId.toString());
-    return parsed.map<Issue>((json) => Issue.fromJson(json)).toList();
+    return parsed['issue'].map<Issue>((json) => Issue.fromJson(json)).toList();
+  }
+
+  Future<List<Issue>> getAllIssues() async {
+    final parsed = await _helper.get('/issue');
+    return parsed['issue'].map<Issue>((json) => Issue.fromJson(json)).toList();
   }
 
   // change future type, refactor to fetch lists/use other request params

@@ -1,6 +1,6 @@
 class Viewpoint {
   final int? id;
-  final int issueId;
+  final int? issueId;
   final String text;
   //final double pop_estimate;
   final int upvotes;
@@ -25,5 +25,12 @@ class Viewpoint {
       upvotes: json['upvotes'],
       //userId: json['userId'],
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['text'] = this.text;
+    return data;
   }
 }

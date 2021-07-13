@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grove_front/ui/shared/typography.dart';
 import 'package:grove_front/ui/shared/web_wrapper.dart';
 import 'package:grove_front/ui/shared/cards.dart';
 import 'package:grove_front/core/models/data_models/issue.dart';
@@ -14,10 +15,10 @@ class LandingView extends StatefulWidget {
 class _LandingViewState extends State<LandingView> {
   bool isLoading = false;
   //add needed data models here: List<MessageModel> messageList;
-  late Issue issue;
+  late Issue issue; //GET RID OF THIS
 
   //add needed data providers here: MessageProvider messageProvider = new MessageProvider();
-  IssueProvider issueProvider = new IssueProvider();
+  IssueProvider issueProvider = new IssueProvider(); //GET RID OF THIS
 
   void initState() {
     _fetchData();
@@ -27,7 +28,7 @@ class _LandingViewState extends State<LandingView> {
   Future _fetchData() async {
     setState(() => isLoading = true);
     // add method to fetch here: messageList = await messageProvider.fetchPosts();
-    issue = await issueProvider.getIssueById(1);
+    issue = await issueProvider.getIssueById(1); //GET RID OF THIS
     setState(() => isLoading = false);
   }
 
@@ -41,6 +42,18 @@ class _LandingViewState extends State<LandingView> {
             //add code here
             Column(
                 children: [
+                  Head1Bold(text: "Welcome to Grove"),
+                  Head3Plain(
+                      text:
+                          "A place where you can voice your opinions to your leaders"),
+                  //Sign in/sign up
+                  Container(
+                      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                      height: 600,
+                      child: Image(
+                          fit: BoxFit.cover,
+                          image: AssetImage('images/capitol.jpg'))),
+
                   Card2(
                     issueId: 5,
                     issueName: issue.name,

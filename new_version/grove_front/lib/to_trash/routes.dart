@@ -62,7 +62,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case IssuePageRoute:
       var id = settings.arguments ?? int.tryParse(routingData['id']);
       return (id != null)
-          ? _getPageRoute(IssuePage(issueId: id), settings)
+          ? _getPageRoute(IssuePage(id), settings)
           : _getPageRoute(LandingView(), settings);
 
     // case LeaderRoute:

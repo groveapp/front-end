@@ -36,9 +36,12 @@ class _IssueListViewState extends State<IssueListView> {
   Future _fetchData() async {
     setState(() => isLoading = true);
     // add method to fetch here: messageList = await messageProvider.fetchPosts();
-    issues = await issueProvider.getIssuesByOrganization(widget.organizationId);
-    organization =
-        await organizationProvider.getOrganizationById(widget.organizationId);
+
+    issues = await issueProvider.getAllIssues();
+
+    // issues = await issueProvider.getIssuesByOrganization(widget.organizationId);
+    // organization =
+    //     await organizationProvider.getOrganizationById(widget.organizationId);
     setState(() => isLoading = false);
   }
 

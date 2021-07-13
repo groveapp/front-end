@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grove_front/core/providers/viewpoint_provider.dart';
+import 'package:grove_front/core/services/api_helper.dart';
 import 'package:grove_front/ui/shared/buttons.dart';
 import 'package:grove_front/ui/shared/web_wrapper.dart';
 import 'package:grove_front/ui/shared/cards.dart';
@@ -9,11 +10,12 @@ import 'package:grove_front/core/providers/issue_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:grove_front/core/models/page_models/issue_page_model.dart';
 import 'package:grove_front/ui/shared/typography.dart';
+import 'package:share_plus/share_plus.dart';
 
 class IssuePage extends StatefulWidget {
   // accept passed arguments from nav here
   final issueId;
-  IssuePage({this.issueId});
+  IssuePage(this.issueId);
 
   @override
   State createState() => _IssuePageState();
@@ -91,7 +93,11 @@ class _IssuePageState extends State<IssuePage> {
                           children: [
                             AltButton(text: "Follow", onPressed: () {}),
                             Container(width: 8),
-                            PrimaryButton(text: "Share", onPressed: () {})
+                            PrimaryButton(
+                                text: "Share on email",
+                                onPressed: () {
+                                  shareIssue();
+                                })
                           ],
                         )
                       ],
@@ -116,18 +122,146 @@ class _IssuePageState extends State<IssuePage> {
                               viewpointText: viewpoints[index].text,
                               viewpointId: viewpoints[index].id));
                     }),
-
-                PrimaryButton(
-                    text: "Submit another viewpoint",
-                    onPressed: () {
-                      showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-
-                              // add submit viewpoint dialog here
-
-                              ));
-                    })
+                BodyPlain(
+                    text:
+                        "Don't agree with any of the above viewpoints? Add your own:"),
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    child: PrimaryButton(
+                        text: "Submit another viewpoint",
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (_) =>
+                                  SubmitViewpointDialog(issue: issue));
+                        }))
               ])));
+  }
+}
+
+class SubmitViewpointDialog extends StatefulWidget {
+  final Issue issue;
+  SubmitViewpointDialog({required this.issue});
+
+  @override
+  State createState() => _SubmitViewpointDialogState();
+}
+
+class _SubmitViewpointDialogState extends State<SubmitViewpointDialog> {
+  ViewpointProvider viewpointProvider = new ViewpointProvider();
+  final _dialogScrollController = ScrollController();
+  final TextEditingController viewpointTitleController =
+      new TextEditingController();
+  final TextEditingController viewpointBodyController =
+      new TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+        title: Head2Bold(text: "Submit another Viewpoint"),
+        content: Scrollbar(
+          isAlwaysShown: true,
+          interactive: true,
+          controller: _dialogScrollController,
+          child: SingleChildScrollView(
+              controller: _dialogScrollController,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Head3Plain(text: "Issue: ${widget.issue.name}"),
+                    BodyPlain(
+                        text:
+                            "Give your viewpoint a title. Follow the guidelines below:"),
+                    Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                        child: TextField(
+                          style: TextStyle(fontFamily: "Open Sans"),
+                          controller: viewpointTitleController,
+                        )),
+                    BodyPlain(
+                        text:
+                            "Now for the actual viewpoint. What do you think, and why? Follow the guidelines below:"),
+                    Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                        child: TextField(
+                          style: TextStyle(fontFamily: "Open Sans"),
+                          // change reqs
+                          maxLines: 5,
+                          maxLength: 400,
+                          controller: viewpointBodyController,
+                        )),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          PrimaryButton(
+                              text: "Cancel",
+                              onPressed: () {
+                                Navigator.pop(context);
+                              }),
+                          PrimaryButton(
+                              text: "Submit Viewpoint",
+                              onPressed: () async {
+                                final response = await viewpointProvider
+                                    .postViewpoint(Viewpoint(
+                                        text: viewpointBodyController.text,
+                                        issueId: widget.issue.id,
+                                        upvotes: 1));
+                                //Navigator.pop(context);
+                                if (response != "error") {
+                                  showDialog(
+                                      context: context,
+                                      builder: (_) =>
+                                          ViewpointSubmittedDialog());
+                                } else {
+                                  showDialog(
+                                      context: context,
+                                      builder: (_) => ViewpointErrorDialog());
+                                }
+                              })
+                        ])
+                  ])),
+        ));
+  }
+}
+
+void shareIssue() async {
+  await Share.share("Hello", subject: "Hello Subject");
+}
+
+void shareViewpoint() async {
+  await Share.share("Hello");
+}
+
+class ViewpointSubmittedDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Head3Plain(text: "Viewpoint submitted successfully!"),
+      content: Column(
+        children: [
+          BodyPlain(
+              text:
+                  "Thanks for sharing your view--you've made American democracy better today. Your viewpoint will be reviewed by our panel of moderators to make sure it fits our community guidelines, and will be added to this issue page once it's approved. We'll send you a confirmation email when that happens, so you can start sharing it with your friends.")
+        ],
+      ),
+    );
+  }
+}
+
+class ViewpointErrorDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Head3Plain(text: "Viewpoint submitted successfully!"),
+      content: Column(
+        children: [
+          BodyPlain(
+              text:
+                  "Thanks for sharing your view--you've made American democracy better today. Your viewpoint will be reviewed by our panel of moderators to make sure it fits our community guidelines, and will be added to this issue page once it's approved. We'll send you a confirmation email when that happens, so you can start sharing it with your friends.")
+        ],
+      ),
+    );
   }
 }

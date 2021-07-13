@@ -15,6 +15,24 @@ final beamerDelegate = BeamerDelegate(
       // Return either Widgets or BeamPages if more customization is needed
       '/': (context, state) =>
           BeamPage(title: 'Welcome to Grove', child: LandingView()),
+      '/organizations': (context, state) {
+        // Take the parameter of interest from BeamState
+        // Return a Widget or wrap it in a BeamPage for more flexibility
+        return BeamPage(
+            title: 'Organizations in Grove',
+            type: BeamPageType.fadeTransition,
+            child: IssueListView());
+      },
+      '/organizations/:organizationId': (context, state) {
+        // Take the parameter of interest from BeamState
+        final organizationId =
+            int.parse(state.pathParameters['organizationId']!);
+        // Return a Widget or wrap it in a BeamPage for more flexibility
+        return BeamPage(
+            title: 'Organization: $organizationId',
+            type: BeamPageType.fadeTransition,
+            child: IssueListView(organizationId: organizationId));
+      },
       '/issues/:issueId': (context, state) {
         // Take the parameter of interest from BeamState
         final issueId = int.parse(state.pathParameters['issueId']!);
@@ -22,8 +40,8 @@ final beamerDelegate = BeamerDelegate(
         return BeamPage(
             title: 'Issue: $issueId',
             type: BeamPageType.fadeTransition,
-            child: IssuePage(issueId: issueId));
-      }
+            child: IssuePage(issueId));
+      },
     },
   ),
 );
