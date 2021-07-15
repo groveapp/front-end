@@ -25,8 +25,6 @@ twitter/facebook/email notification subscription
 mobile vs. desktop specific code: import dart:io show Platform
 share URL: import 'dart:html'; var url = window.location.href;
 
-
-
 APIs for leader info:
 https://medium.com/ndp-annotations/civic-and-political-apis-data-sets-and-websites-136fa63a0af1
 Maplight: paid civic tech APIs
@@ -40,4 +38,12 @@ Socrata: https://socratadiscovery.docs.apiary.io/#reference/0/find-by-domain
 American Community Survey API: https://www.census.gov/data/developers/data-sets/acs-1year.html
 DemocracyWorks API: https://www.democracy.works/elections-api
 Google Civic Info: https://developers.google.com/civic-information
+OpenCivicData:https://github.com/opencivicdata/
+OnTheIssues
+
+Voter Reg:
+https://verify.vote.org/
+https://am-i-registered-to-vote.org/
+https://www.vote411.org/check-registration
+
 

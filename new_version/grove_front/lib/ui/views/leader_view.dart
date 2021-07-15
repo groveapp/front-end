@@ -6,6 +6,7 @@ import 'package:grove_front/ui/shared/cards.dart';
 import 'package:grove_front/core/models/data_models/leader.dart';
 import 'package:grove_front/core/models/data_models/viewpoint.dart';
 import 'package:grove_front/core/providers/leader_provider.dart';
+import 'package:horizontal_data_table/horizontal_data_table.dart';
 import 'package:provider/provider.dart';
 //import 'package:grove_front/core/models/page_models/leader_page_model.dart';
 import 'package:grove_front/ui/shared/typography.dart';
@@ -70,6 +71,16 @@ class _LeaderPageState extends State<LeaderPage> {
 
                 // divergence index
                 // past votes
+
+                HorizontalDataTable(
+                  leftHandSideColumnWidth: 200, rightHandSideColumnWidth: 600,
+                  headerWidgets: [],
+                  isFixedHeader: true,
+                  // leftSideItemBuilder: ,
+                  // rightSideItemBuilder: ,
+                  // itemCount: ,
+                )
+
                 // top contributors
                 // campaign promises
               ])));
