@@ -42,6 +42,15 @@ final beamerDelegate = BeamerDelegate(
             type: BeamPageType.fadeTransition,
             child: IssuePage(issueId));
       },
+      '/leaders/:leaderId': (context, state) {
+        // Take the parameter of interest from BeamState
+        final leaderId = int.parse(state.pathParameters['leaderId']!);
+        // Return a Widget or wrap it in a BeamPage for more flexibility
+        return BeamPage(
+            title: 'Leader: $leaderId',
+            type: BeamPageType.fadeTransition,
+            child: IssuePage(leaderId));
+      },
     },
   ),
 );

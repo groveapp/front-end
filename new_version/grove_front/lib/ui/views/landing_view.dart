@@ -55,13 +55,13 @@ class _LandingViewState extends State<LandingView> {
                           image: AssetImage('images/capitol.jpg'))),
 
                   Card2(
-                    issueId: 5,
+                    issueId: 1,
                     issueName: issue.name,
                     issueSummary: issue.summary,
                     issueTotalVotes: issue.totalVotes,
                   ),
                   IssueCard(
-                    issueId: 5,
+                    issueId: 1,
                     issueName: issue.name,
                     issueSummary: issue.summary,
                     issueTotalVotes: issue.totalVotes,

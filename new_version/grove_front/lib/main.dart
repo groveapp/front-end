@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:grove_front/router.dart';
 import 'package:beamer/beamer.dart';
+import 'package:grove_front/ui/shared/chart_test.dart';
+import 'package:grove_front/ui/shared/charts.dart';
+import 'package:grove_front/core/models/data_models/viewpoint.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,6 +68,13 @@ final groveTheme = ThemeData(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // return MaterialApp(
+    //     home: ViewpointApprovalChart(viewpointList: [
+    //   Viewpoint(id: 1, issueId: 5, text: "I want more money", upvotes: 5),
+    //   Viewpoint(id: 1, issueId: 5, text: "I want more money", upvotes: 3),
+    //   Viewpoint(id: 2, issueId: 3, text: "I want less money", upvotes: 4),
+    // ]));
+
     return MaterialApp.router(
         routeInformationParser: BeamerParser(),
         routerDelegate: beamerDelegate,

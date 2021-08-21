@@ -11,6 +11,9 @@ import 'package:provider/provider.dart';
 import 'package:grove_front/core/models/page_models/issue_page_model.dart';
 import 'package:grove_front/ui/shared/typography.dart';
 import 'package:share_plus/share_plus.dart';
+import 'dart:io' show Platform;
+
+//change Share at bottom
 
 class IssuePage extends StatefulWidget {
   // accept passed arguments from nav here

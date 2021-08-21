@@ -1,9 +1,12 @@
+1. chart summarizing estimated distribution of viewpoint approval percentages
+2. table showing leader's past votes
+
 full issue page UI
 welcome screen UI
 control text overflow behavior -- expandable text widget
 add leader page WITH APIs
 share bar for FB, email, Twitter, IG
-if user has voted, show them stats
+if user has voted, show them stats (charts flutter)
 
 once backend done:
 
