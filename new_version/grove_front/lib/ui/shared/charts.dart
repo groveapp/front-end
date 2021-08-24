@@ -19,6 +19,8 @@ class _ViewpointApprovalChartState extends State<ViewpointApprovalChart> {
 
   int touchedIndex = -1;
 
+// build box around chart with titles
+
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -52,13 +54,17 @@ class _ViewpointApprovalChartState extends State<ViewpointApprovalChart> {
     );
   }
 
+// specify data for bar chart
+
   BarChartData mainBarData() {
     return BarChartData(
       barTouchData: BarTouchData(
+        //tooltips
         touchTooltipData: BarTouchTooltipData(
             tooltipBgColor: primaryColor,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
-              widget.viewpointList[group.x.toInt()].id;
+              return BarTooltipItem(
+                  widget.viewpointList[group.x.toInt()].text, TextStyle());
             }),
         touchCallback: (barTouchResponse) {
           setState(() {
@@ -115,7 +121,12 @@ class _ViewpointApprovalChartState extends State<ViewpointApprovalChart> {
       barRods: [
         BarChartRodData(
           y: value,
-          colors: isTouched ? [Colors.yellow] : [barColor],
+          colors: isTouched
+              ? [
+                  Color.fromRGBO(barColor.red, barColor.green, barColor.blue,
+                      barColor.opacity - 0.5)
+                ]
+              : [barColor],
           width: width,
         ),
       ],

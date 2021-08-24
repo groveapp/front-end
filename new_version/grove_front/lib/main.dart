@@ -73,6 +73,7 @@ class MyApp extends StatelessWidget {
     //   Viewpoint(id: 1, issueId: 5, text: "I want more money", upvotes: 5),
     //   Viewpoint(id: 1, issueId: 5, text: "I want more money", upvotes: 3),
     //   Viewpoint(id: 2, issueId: 3, text: "I want less money", upvotes: 4),
+    //   Viewpoint(id: 2, issueId: 5, text: "Hello", upvotes: 4)
     // ]));
 
     return MaterialApp.router(
