@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grove_front/core/providers/viewpoint_provider.dart';
 import 'package:grove_front/core/services/api_helper.dart';
 import 'package:grove_front/ui/shared/buttons.dart';
+import 'package:grove_front/ui/shared/charts.dart';
 import 'package:grove_front/ui/shared/web_wrapper.dart';
 import 'package:grove_front/ui/shared/cards.dart';
 import 'package:grove_front/core/models/data_models/issue.dart';
@@ -11,7 +12,8 @@ import 'package:provider/provider.dart';
 import 'package:grove_front/core/models/page_models/issue_page_model.dart';
 import 'package:grove_front/ui/shared/typography.dart';
 import 'package:share_plus/share_plus.dart';
-import 'dart:io' show Platform;
+import 'dart:html' as html;
+import 'package:flutter/foundation.dart';
 
 //change Share at bottom
 
@@ -50,6 +52,12 @@ class _IssuePageState extends State<IssuePage> {
 
   @override
   Widget build(BuildContext context) {
+    var isMobile = 0;
+    if ((defaultTargetPlatform == TargetPlatform.iOS) ||
+        (defaultTargetPlatform == TargetPlatform.android)) {
+      isMobile = 1;
+    }
+
     return WebScreen(Center(
         child: isLoading
             ? CircularProgressIndicator()
@@ -96,11 +104,7 @@ class _IssuePageState extends State<IssuePage> {
                           children: [
                             AltButton(text: "Follow", onPressed: () {}),
                             Container(width: 8),
-                            PrimaryButton(
-                                text: "Share on email",
-                                onPressed: () {
-                                  shareIssue();
-                                })
+                            shareIssue(isMobile)
                           ],
                         )
                       ],
@@ -112,19 +116,22 @@ class _IssuePageState extends State<IssuePage> {
                   alignment: Alignment.topCenter,
                   child: BodyPlain(text: issue.summary),
                 ),
+                DefaultTabController(
+                    length: 2,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          tabs: [Tab(text: "Vote"), Tab(text: "Statistics")],
+                        ),
+                        TabBarView(
+                          children: [
+                            getViewpointList(viewpoints),
+                            getDataView(viewpoints)
+                          ],
+                        )
+                      ],
+                    )),
 
-                ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    itemCount: viewpoints.length,
-                    itemBuilder: (context, index) {
-                      return ChangeNotifierProvider(
-                          create: (context) => IssuePageModel(),
-                          child: ViewpointCard(
-                              viewpointTitle: viewpoints[index].id.toString(),
-                              viewpointText: viewpoints[index].text,
-                              viewpointId: viewpoints[index].id));
-                    }),
                 BodyPlain(
                     text:
                         "Don't agree with any of the above viewpoints? Add your own:"),
@@ -229,12 +236,66 @@ class _SubmitViewpointDialogState extends State<SubmitViewpointDialog> {
   }
 }
 
-void shareIssue() async {
-  await Share.share("Hello", subject: "Hello Subject");
+Widget getDataView(viewpoints) {
+  return SizedBox(
+      height: 200,
+      width: 400,
+      child: ViewpointApprovalChart(viewpointList: viewpoints));
 }
 
-void shareViewpoint() async {
-  await Share.share("Hello");
+Widget getViewpointList(viewpoints) {
+  return ListView.builder(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      itemCount: viewpoints.length,
+      itemBuilder: (context, index) {
+        return ChangeNotifierProvider(
+            create: (context) => IssuePageModel(),
+            child: ViewpointCard(
+                viewpointTitle: viewpoints[index].id.toString(),
+                viewpointText: viewpoints[index].text,
+                viewpointId: viewpoints[index].id));
+      });
+}
+
+Widget shareIssue(isMobile) {
+  if (isMobile == 1) {
+    return Container(
+        child: PrimaryButton(
+            text: "Share",
+            onPressed: () {
+              shareNative(html.window.location.href);
+            }));
+  } else {
+    return Container(
+        child: Row(children: [
+      PrimaryButton(text: "FB Button", onPressed: () {}),
+      PrimaryButton(text: "Tweet Button", onPressed: () {}),
+      PrimaryButton(text: "Email Button", onPressed: () {})
+    ]));
+  }
+}
+
+Widget shareViewpoint(isMobile) {
+  if (isMobile == 1) {
+    return Container(
+        child: PrimaryButton(
+            text: "Share",
+            onPressed: () {
+              shareNative(html.window.location.href);
+            }));
+  } else {
+    return Container(
+        child: Row(children: [
+      PrimaryButton(text: "FB Button", onPressed: () {}),
+      PrimaryButton(text: "Tweet Button", onPressed: () {}),
+      PrimaryButton(text: "Email Button", onPressed: () {})
+    ]));
+  }
+}
+
+void shareNative(payload) async {
+  await Share.share("Hello", subject: payload);
 }
 
 class ViewpointSubmittedDialog extends StatelessWidget {

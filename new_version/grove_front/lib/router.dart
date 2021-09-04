@@ -49,7 +49,7 @@ final beamerDelegate = BeamerDelegate(
         return BeamPage(
             title: 'Leader: $leaderId',
             type: BeamPageType.fadeTransition,
-            child: IssuePage(leaderId));
+            child: LeaderPage(leaderId));
       },
     },
   ),

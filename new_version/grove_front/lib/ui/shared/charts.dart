@@ -34,10 +34,10 @@ class _ViewpointApprovalChartState extends State<ViewpointApprovalChart> {
             height: 4,
           ),
           Head3Plain(text: "Est. Percent of People in District Approving"),
-          const SizedBox(
-            height: 38,
-          ),
-          Expanded(
+          const SizedBox(height: 38),
+          Container(
+            height: 200,
+            width: 50,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: BarChart(
@@ -58,6 +58,7 @@ class _ViewpointApprovalChartState extends State<ViewpointApprovalChart> {
 
   BarChartData mainBarData() {
     return BarChartData(
+      alignment: BarChartAlignment.spaceEvenly,
       barTouchData: BarTouchData(
         //tooltips
         touchTooltipData: BarTouchTooltipData(

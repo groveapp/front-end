@@ -9,7 +9,7 @@ class Leader {
   final int approvals;
   final int disapprovals;
   final double estApproval;
-  final JsObject votingRecord;
+  final String votingRecord;
 
   Leader(
       {this.id,

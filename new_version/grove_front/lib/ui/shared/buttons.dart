@@ -31,9 +31,9 @@ class PrimaryButton extends StatelessWidget {
             child: Text(text,
                 style: TextStyle(
                     color: primaryColor,
-                    fontFamily: "Montserrat",
+                    fontFamily: "Open Sans",
                     fontSize: 12,
-                    fontWeight: FontWeight.w800))),
+                    fontWeight: FontWeight.w600))),
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
             primary: actionColor,

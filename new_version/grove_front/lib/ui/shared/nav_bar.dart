@@ -28,7 +28,7 @@ Widget buildNavBar(BuildContext context) {
           NavButton(
             text: "Leaders",
             onPressed: () {
-              Beamer.of(context).beamToNamed('/issues/1');
+              Beamer.of(context).beamToNamed('/leaders/1');
             },
           ),
           NavButton(
